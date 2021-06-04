@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {}Introduction}{1}%
+\contentsline {section}{\numberline {1}}{1}%
+\contentsline {section}{\numberline {2}LES TRAVAUX EFFECTUÉS ET LES APPORTS DU STAGE}{1}%
+\contentsline {section}{\numberline {3}Montage du CM121C}{1}%
+\contentsline {subsection}{\numberline {3.1}Surface Horizontal}{1}%
+\contentsline {subsection}{\numberline {3.2}Inclinaison de la barre coulissante}{2}%
+\contentsline {subsection}{\numberline {3.3}Installation du pyranomètre}{3}%
+\contentsline {subsection}{\numberline {3.4}Alignement nord-sud}{4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Pointage géographique}{4}%
+\contentsline {subsubsection}{\numberline {3.4.2}Boussole solaire fixe}{6}%
+\contentsline {section}{\numberline {4}Programmation}{9}%
+\contentsline {subsection}{\numberline {4.1}Calendrier du Cm121}{9}%
+\contentsline {subsection}{\numberline {4.2}Analyse statistique}{10}%
+\contentsline {subsubsection}{\numberline {4.2.1}Suppression des données non utilisés, non acquis et abérantes}{10}%
+\contentsline {subsubsection}{\numberline {4.2.2}Calcul des facteurs de correction}{11}%
+\contentsline {subsubsection}{\numberline {4.2.3}Etalonnage}{11}%
+\contentsline {subsection}{\numberline {4.3}Représentation graphique de l'erreur relative}{11}%
+\contentsline {subsubsection}{\numberline {4.3.1}Histogramme}{12}%
+\contentsline {subsubsection}{\numberline {4.3.2}Selection des mesures entre deux intervalles}{13}%
+\contentsline {subsubsection}{\numberline {4.3.3}éxécution de l'analyse statistique}{13}%
+\contentsline {subsubsection}{\numberline {4.3.4}Impact de la ventillation sur les mesures}{13}%
