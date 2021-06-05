@@ -1,5 +1,5 @@
 # Don't track content of these folders
-image
+image/
 rapport_stage.txt
 *.aux
 *.zip
