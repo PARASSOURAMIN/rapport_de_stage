@@ -121,9 +121,9 @@ Master 1 Énergie \\
 \addcontentsline{toc}{section}{\protect\numberline{}Introduction}%
 \setcounter{page}{1}
 
-Dans le cadre de mon Master1 j'ai du réaliser un stage de huit semaines, le stage s'est dérouler au sein du laboratoire LE2P de l'université de la Réunion.\\
+Dans le cadre de mon master1 j'ai dû réaliser un stage de huit semaines, le stage s'est déroulé au sein du laboratoire LE2P de l'université de la Réunion.\\
 
-Le stage avait pour objectif le montage d'un pyranomètre à arc d'ombrage cm121, l'élaboration d'un calendrier de maintenance pour le cm121, la mise en place d'un protocole pemrettant de régler la position Nord-sud du cm121, le dévelloppement de programme sous python permettant l'analyse statistique des mesures de DHI, mais aussi d'éffectuer une étude montrant si les mesures du cm121 sont plus proche du spn1 que du tracker et finnalement de savoir  quel dispositif ont les resiltats les plus proche du tracker entre le cm121 et le spn1.
+Le stage avait pour objectif le montage d'un pyranomètre à arc d'ombrage cm121, l'élaboration d'un calendrier de maintenance pour le cm121, la mise en place d'un protocole permettant le réglage la position Nord-sud, le développement des programmes sous python permettant l'analyse statistique des mesures de DHI, mais aussi d'effectuer une étude montrant si les mesures du cm121 sont plus proches du spn1 que du tracker et finalement de savoir si l'installation d'une ventilation à un impact sur les mesures du CM121.
  
 
 \section{}
@@ -134,7 +134,7 @@ Le stage avait pour objectif le montage d'un pyranomètre à arc d'ombrage cm121
 
 \section{Montage du CM121C}
 
-Le CM121C comporte cinq partie, la base, le pilier, la barre transversale, la barre coulissante et le support pour pyranomètre. Le montage consiste juste a assembler chaque partie à l'aide des boulons fournis.
+Le CM121 comportes cinq parties, la base, le pilier, la barre transversale, la barre coulissante et le support pour pyranomètre. Le montage consiste juste à assembler chaque partie à l'aide des boulons fournis.
 
 \begin{figure}[H]
 \centering
@@ -144,7 +144,7 @@ Le CM121C comporte cinq partie, la base, le pilier, la barre transversale, la ba
 
 \subsection{Surface Horizontal}
 
-La premiere étape pour le positionnement du cm121 consiste à s'assurer que la base du cm121 est plane, pour se faire la base comporte 3 boulons permettant à l'aide d'un niveau à bulle de mettre la base à l'horizontal. 
+La première étape pour le positionnement du cm121 consiste à s'assurer que sa base est plane, pour se faire la base comporte 3 boulons permettant à l'aide d'un niveau à bulle de mettre la base à l'horizontale.. 
 
 \begin{figure}[H]
 \centering
@@ -154,7 +154,7 @@ La premiere étape pour le positionnement du cm121 consiste à s'assurer que la 
 
 \subsection{Inclinaison de la barre coulissante}
 
-La barre coullissante doit être parallele à l'axe polaire, pour se faire l'angle entre l'horizon et la barre doit etre égal à la latitude du site, pour l'Université de la réunion cela implique un angle de -20.9$^\circ$. L'angle est régler grace à une application mobile qui offre une precision suffisante le réglage pouvant se faire à 1-4 degrés prêt selon la datasheet.
+La barre coulissante doit être parallèle à l'axe polaire, pour se faire l'angle entre l'horizon et la barre doit être égal à la latitude du site, pour l'Université de la Réunion cela implique un angle de -20.9$^\circ$. L'angle est réglé grace à une application mobile qui offre une précision acceptable, le réglage pouvant se faire à 1-4 degrés prêts selon la datasheet.
 
 \begin{figure}[H]
 \centering
@@ -164,7 +164,7 @@ La barre coullissante doit être parallele à l'axe polaire, pour se faire l'ang
 
 \subsection{Installation du pyranomètre}
 
-Le pyranomètre est installé sur le socle prévu à cet effet, les pattes du pyranometre permettent de rattraper les erreurs d'angles lors du montage de la base. Une fois effectué la ventillation est installé est raccorder en 12 volts. La ventillation permet de garder le pyranomètre à température constante, permettant ainsi de faire l'aquisition des mesures dans les memes conditions de température toute l'année.
+Le pyranomètre est installé sur son socle. Une fois effectuer la ventilation est installé est raccordé en 12 volts. La ventilation permet de garder le pyranomètre à température constante, permettant ainsi de faire l'acquisition des mesures dans les mêmes conditions de températures toute l'année.
 
 \begin{figure}[H]
 \centering
@@ -174,15 +174,15 @@ Le pyranomètre est installé sur le socle prévu à cet effet, les pattes du py
 
 \subsection{Alignement nord-sud}
 
-L'étape la plus importante et le réglage de la position nord-sud, un mauvais reglage nord-sud peut entrainer des donnes eronné du fait que le capteur est susceptible de capter du rayonnment globale à certain moment de la journée. Une premiere approche pourrait consister à utiliser un compas magnétique mais la présence d'élément ferreux donne une indication éronné du nord. La méthode retenue est l'utilisation d'une boussole solaire.\\
+L'étape la plus importante et le réglage de la position nord-sud, un mauvais réglage nord-sud peuvent entrainer des données aberrantes, du fait que le capteur est susceptible de recevoir du rayonnement global à certains moments de la journée. Une première approche pourrait consister à utiliser un compas magnétique mais la présence d'éléments ferreux donne une indication fausse du nord. La méthode retenue est l'utilisation d'une boussole solaire.\\
 ~~\\
-Le principe de la boussole solaire est de projeter l'ombre du soleil sur une surface plane, sur cette surface plane se trouve un cadran graduer représentant l'azimut, en connaissant l'azimut du soleil et en reportant l'ombre sur le cadran nous obtenons la positions nord-sud.\\
+Le principe de la boussole solaire est de projeter l'ombre du soleil sur une surface plane, sur cette surface plane se trouve un cadran gradué représentant l'azimut, en connaissant l'azimut du soleil et en reportant l'ombre sur le cadran nous obtenons la position nord-sud.\\
 
 \subsubsection{Pointage géographique}
 
-Le premier alignement Nord-sud fut effectué par une boussole solaire totalement independante de l'arc d'ombrage, le but consiste à l'aide d'une feuille excel et de l'heure actuel, de calculé l'azimut, de le reporté sur la boussole solaire en la faisant pivoter et de pointer un point geographique le plus lointain passant dans l'axe nord-sud de la boussole solaire. Une fois ce point geographique trouvé, nous effectuons la meme demarche en reportant ce point dans l'axe de la barrre coulissante.\\
+Le premier alignement Nord-sud fut effectué par une boussole solaire totalement indépendante de l'arc d'ombrage, le but consiste à l'aide d'une feuille excel et de l'heure actuelle, de calculer l'azimut, de la reporter sur la boussole solaire en la faisant pivoter et de pointer un point géographique passant dans l'axe nord-sud de la boussole solaire. Une fois ce point géographique trouvé, nous effectuons la même démarche en reportant ce point dans l'axe de la barre coulissante.\\
 
-Cette methode donne de bon résultat, mais elle nous expose à des erreurs d'angle nottament lors du pointage du point géographique et le vent faisant bouger le fil, elle a aussi pour inconvénient une mise en place assez lourde avec l'obligation d'avoir un ordinateur portable sous la main.\\	
+Cette méthode donne de bons résultats, mais elle nous expose à des erreurs d'angle notamment lors du pointage du point géographique et le vent faisant bouger le fil, elle a aussi pour inconvénient une mise en place assez lourde avec l'obligation d'avoir un ordinateur portable sous la main.\\	
 
 \begin{figure}[H]
 \centering
@@ -198,13 +198,13 @@ Cette methode donne de bon résultat, mais elle nous expose à des erreurs d'ang
 
 \subsubsection{Boussole solaire fixe}   
 
-Pour palier aux problèmes de la boussole solaire traditionnelle, il fut elaborer une boussole solaire fixe. Le but est de faciliter le réglage nord-sud, mais aussi de diminuer les erreurs d'angles de la boussole traditionnelle, pour se faire la boussole devras etre fixer à la barre transversale du cm121.\\
+Pour pallier les problèmes de la boussole solaire traditionnelle, il fit élaborer une boussole solaire fixe. Le but est de faciliter le réglage nord-sud, mais aussi de diminuer les erreurs d'angles de la boussole traditionnelle, pour se faire la boussole devra être fixée à la barre transversale du cm121.\\
 ~\\
-Pour faciliter la maintenance le choix de la conception c'est porté sur l'impression 3D et la modélisation fut effectué sur le logiciel fusion 360 (figure *). La boussole comporte 4 partie imprimer en 3D (deux bases et deux longerons), une plaque de plexiglas permettant de placer notre cadran d'azimut et une tige filleté qui sert de support au fil.\\
+Pour faciliter la maintenance le choix de la conception s'est porté sur l'impression 3D, la modélisation fut effectué sur le logiciel fusion 360 (figure *). La boussole comporte 4 parties imprimer en 3D (deux bases et deux longerons), une plaque de plexiglas permettant de placer notre cadran d'azimut et une tige filetée qui sert de support au fil.\\
 
 
 
-Les quatre parties imprimé en 3D sont assembler à l'aide de quatre boulon de 3*20mm.\\
+Les quatre parties imprimées en 3D sont assemblées à l'aide de quatre boulons de 3*20mm.\\
 
 \begin{figure}[H]
 \centering
@@ -212,7 +212,7 @@ Les quatre parties imprimé en 3D sont assembler à l'aide de quatre boulon de 3
 \caption{Assemblage bases et longerons}
 \end{figure}
 
-Trois boulons de 3*30mm viennent se placer au endroits prevus, ces boulons permettent de regler la plaque de plexiglas pour qu'elle soit horizontal. La plaque de plexiglass est coupé dans du plexiglass de 3mm et les passage de boulon sont percer par une meche de 3mm. La plaque repose sur les trois boulons de 3*30mm.\\
+Trois boulons de 3*30mm viennent se placer aux endroits prévus, ces boulons permettent de régler la plaque de plexiglas pour qu'elle soit horizontale. La plaque de plexiglas est coupé dans du plexiglas de 3 mm et les passages de boulon sont percé par une mèche de 3 mm. La plaque repose sur les trois boulons de 3*30mm.\\
 
 \begin{figure}[H]
 \centering
@@ -220,7 +220,7 @@ Trois boulons de 3*30mm viennent se placer au endroits prevus, ces boulons perme
 \caption{cadran d'azimut}
 \end{figure}
 
-Le cadran d'azimut est imprimé sur du papier ordinaire puis plastifier pour resister aux intempérie, il est fixer sur la plaque de plexiglas grace à huit aimants qui permettent de faire coincider les bords pour assurer la paralelité avec la plaque de plexiglass et donc indirectement avec la barre transversale du cm121.\\
+Le cadran d'azimut est imprimé sur du papier ordinaire puis plastifié pour résister aux intempéries, il est fixé sur la plaque de plexiglas grace à huit aimants qui permettent de faire coïncider les bords pour être parallèle avec la plaque de plexiglas et donc indirectement avec la barre transversale du cm121.\\
 
 \begin{figure}[H]
 \centering
@@ -229,8 +229,8 @@ Le cadran d'azimut est imprimé sur du papier ordinaire puis plastifier pour res
 \end{figure}
 
 
-Viens ensuite la mise en place de la tige fileté de 3mm qui supporte le fil. Le fil passe dans l'intersection du cadran d'azimut et la plaque de plexiglass par un trou de 3mm, cela permet de reduire les effets du vents sur l'oscillation du fil.\\
-Le cadran est par la suite fixer à la barre transversale à l'aide de colier rilsan, la plaque de plexiglas doit ensuite etre regler à l'horizontal, pour se faire un niveau de surface est utilisé est les ajustement se font par les trois boulons de 3*30mm.
+Viens ensuite la mise en place de la tige filetée de 3 mm qui supporte le fil. Le fil passe dans l'intersection du cadran d'azimut et la plaque de plexiglas par un trou de 3 mm, cela permet de réduire les effets du vent sur l'oscillation du fil.\\
+Le cadran est par la suite fixé à la barre transversale à l'aide de Colliers rilsan, la plaque de plexiglas doit ensuite être réglée à l'horizontale, pour se faire un niveau de surface est utilisé et les ajustements se font par les trois boulons de 3*30mm.
 
 \begin{figure}[H]
 \centering
@@ -238,8 +238,8 @@ Le cadran est par la suite fixer à la barre transversale à l'aide de colier ri
 \caption{cadran d'azimut}
 \end{figure}
 
-Nous devons maintenant connaitre l'azimut du soleil, la solution la plus simple est d'utiliser un site internet comme par exemple suncalc.org. L'azimut obtenu doit ensuite etre reporté sur le cadran, pour se faire il suffit de faire pivoter la base du cm121 sur son axe vertical. Le positionnement Nord-sud est effectué.\\
-Cette méthode comporte quand meme des limites, elle ne marche que pour les jours ensoleillé et la présence de masque cache à certain moment de la journée le soleil ce qui empeche le positionnement nord-sud. 
+Nous devons maintenant connaitre l'azimut du soleil, la solution la plus simple est d'utiliser un site internet comme par exemple suncalc.org. L'azimut obtenu doit ensuite être reporté sur le cadran, pour se faire il suffit de faire pivoter la base du cm121 sur son axe vertical. Le positionnement Nord-sud est effectué.\\
+Cette méthode comporte quand même des limites, elle ne marche que pour les jours ensoleillés et la présence de masques cache à certains moments de la journée le soleil ce qui empêche le positionnement nord-sud. 
  
 \section{Programmation}
 
@@ -247,7 +247,7 @@ Cette méthode comporte quand meme des limites, elle ne marche que pour les jour
 
 Le calendrier de maintenance du CM121 comporte deux informations, l'heure du midi solaire et la position de la barre coulissante.
 
-La position de la barre coulissante est calculé en fonction de la déclinaison du soleil, par l'expression : 
+La position de la barre coulissante est calculée en fonction de la déclinaison du soleil, par l'expression : 
 
 \begin{flalign*}
 &L = 297 tan (\delta)&&\\
@@ -257,7 +257,7 @@ L : la position de la barre coulissante\\
 $\delta$ : la déclinaison du soleil\\
 ~~\\
 
-Nous pouvons retrouver cette equation en appliquant pythagore sur la figure suivante:
+Nous pouvons retrouver cette équation en calculant le côté opposé à l'angle aigu d'un triangle rectangle, comme sur la figure suivante:
 
 \begin{figure}[H]
 \centering
@@ -271,12 +271,12 @@ Nous pouvons retrouver cette equation en appliquant pythagore sur la figure suiv
 &L = 297tan(\delta)&&\\
 \end{flalign*}
 
-Les calendriers sont calculer par la fonction principale calendrier.py (voir annexe), pour faciliter l'éxécution du programme, celui-ci s'éxécute via un terminal par la ligne de commande :
+Les calendriers sont calculés par la fonction principale calendrier.py (voir annexe), pour faciliter l'exécution du programme, celui-ci s'exécute via un terminal par la ligne de commande :
 \begin{flalign*}
 &\$python~ calendrier.py ~année 
 \end{flalign*}
 
-Le programme retourne alors trois calendrier, un calendrier au format csv, un calendrier au format xlsx et un calendrier ics. Le calendrier csv est obtenue par du texte brut ce qui siginifie qu'il fonctionne avec tout les logiciels de traintement de texte, mais ne permet pas la mise en forme. Le calendrier xlsx permet d'intégrer la mise en forme au calendrier, nous obtenons ainsi des codes couleurs, en vert les jours fériés, en bleu les weekends et en rouge les maintenances minimum à effectuer sur le cm121. Le calendrier ics permet d'avoir les positions du cm121 au format iCalendar ce qui permet entre autre d'avoir le midi-solaire et la position de la barre coulissante via son smartphone.
+Le programme retourne alors trois calendriers, un calendrier au format csv, un calendrier au format xlsx et un calendrier ics. Le calendrier csv est obtenu par du texte brut ce qui signifie qu'il fonctionne avec tous les logiciels de traitement de texte, mais ce format ne permet pas la mise en forme. Le calendrier xlsx permet d'intégrer la mise en forme au calendrier, nous obtenons ainsi des codes couleurs, en vert les jours fériés, en bleu les weekends et en rouge les maintenances minimums à effectuer sur le cm121. Le calendrier ics permet d'avoir les positions du cm121 au format iCalendar ce qui permet entre autres d'avoir le midi-solaire et la position de la barre coulissante via son smartphone.
 
 \begin{figure}[H]
 \centering
@@ -298,30 +298,32 @@ Le programme retourne alors trois calendrier, un calendrier au format csv, un ca
 
 \subsection{Analyse statistique}
 
-J'ai du lors du stage dévelloper des programmes en python permettant d'effectuer l'analyse statistique d'un jeu de donnée. Pour ce faire mes programmes fonctionne avec des dataframes, j'ai porté mon choix vers les dataframes car elles sont facile à manipuler. 
+J'ai dû développer lors du stage des programmes en python permettant d'effectuer l'analyse statistique d'un jeu de données. Pour ce faire mes programmes fonctionnent avec des dataframes, j'ai porté mon choix vers les dataframes car elles sont faciles à manipuler. 
 
 \subsubsection{Suppression des données non utilisés, non acquis et abérantes}
 
-Le fichier de mesure comporte généralement des données non acquis pouvant bloquer l'éxécution de certain programme, mais aussi les données pour la nuit qui sont inintéressante dans le cas de létude du DHI ou du GHI. La fonction nettoyage.py (voir annexe) permet d'enlever ces valeurs. 
+Le fichier de mesure comporte généralement des données non acquises pouvant bloquer l'exécution de certains programmes, mais aussi les données pour la nuit qui sont inintéressantes dans le cas du DHI ou du GHI. La fonction nettoyage.py (voire annexe) permet d'enlever ces valeurs.
 
 \subsubsection{Calcul des facteurs de correction}
 
-Les données du cm121 doit etre corrigés car l'arc d'ombrage masque une partie du diffus. L'expression permettant de calculer le facteur de correction donné dans la datasheet se base sur les travaux de Drummond, cette correction fait l'hypothèse que le ciel est isotropique ce qui donne une correction des mesures purement géométrique (voir annexe).\\
+Les données du cm121 doivent être corrigées car l'arc d'ombrage masque une partie du diffus. L'expression permettant de calculer le facteur de correction donné dans la datasheet se base sur les travaux de Drummond, cette correction fait l'hypothèse que le ciel est isotropique ce qui donne une correction des mesures purement géométrique (voire annexe).\\
 
-Les mesures du CM121 sont corrigées par la fonction correction\_kippzonen.py (voir annexe), cette focntion calcul le facteur de correction en se basant sur l'heure ou la mesure a été prise et l'applique aux mesures du cm121.
+Les mesures du CM121 sont corrigées par la fonction correction\_kippzonen.py (voir annexe), cette fonction calcule le facteur de correction en se basant sur l'heure ou la mesure a été prise et l'applique aux mesures du cm121.
 
 \subsubsection{Etalonnage}
 
-Lors de l'étallonnage les mesures subissent une régression linéaire par rapport à des mesures de références, nous obtenons alors une droite d'équation $y = ax + b$ que nous voulons ramener pour obtenir une droite d'équation $y = x$.\\
+Lors de l'étalonnage les mesures subissent une régression linéaire par rapport à des mesures de références, nous obtenons alors une droite d'équation $y = ax + b$ que nous voulons ramener pour obtenir une droite d'équation $y = x$.\\
 
-La fonction regression\_lineaire.py permet d'effectuer l'étalonnage (voir annexe). Outre l'étallonage la fonction regression\_lineaire.py éffectue aussi l'analyse statistique. L'analyse statistique permet d'obtenir sur le graphique le coefficient de détermination $R^2$, la variance, l'erreur quadratique moyenne et  l'erreur absolue moyenne.\\
+La fonction regression\_lineaire.py permet d'effectuer l'étalonnage (voir annexe). Outre l'étalonage la fonction regression\_lineaire.py effectue aussi l'analyse statistique. L'analyse statistique permet d'obtenir sur le graphique le coefficient de détermination $R^2$, la variance, l'erreur quadratique moyenne et  l'erreur absolue moyenne.\\
 
 Le coefficient de détermination $R^2$ est un indicateur qui permet de juger la qualité d’une régression linéaire. Si le $R^2$ vaut 1, cela signifie que l’équation de la droite de régression est capable de déterminer 100 \% de la distribution des points. Cela signifie alors que le modèle mathématique utilisé, ainsi que les paramètres a et b calculés sont ceux qui déterminent la distribution des points.\\
 ~~\\
 La variance est une mesure de la dispersion des valeurs d'un échantillon.
 ~~\\
-L'erreur quadratique moyenne (RMSE) fournit une indication par rapport à la dispersion ou la variabilité de la qualité de la prédiction, il est souvent relié à la variance car les valeurs de RMSE sont difficiles à interpréter parce que l’on est pas en mesure de dire si on a une variance faible ou forte, l'erreur quadratique moyenne donne plus de poids aux erreurs élevés.
+L'erreur quadratique moyenne (RMSE) fournit une indication par rapport à la dispersion ou la variabilité de la qualité de la prédiction, il est souvent relié à la variance car les valeurs de RMSE sont difficiles à interpréter parce que l’on n'est pas en mesure de dire si on a une variance faible ou forte, l'erreur quadratique moyenne donne plus de poids aux erreurs élevés.
 ~\\ 
+
+L'erreur absolue moyenne (MAE) représente l'erreur systématique, toutes les différences individuelles ont le même poids.\\
 
 \begin{figure}[H]
 \centering
@@ -331,7 +333,7 @@ L'erreur quadratique moyenne (RMSE) fournit une indication par rapport à la dis
 
 \subsection{Représentation graphique de l'erreur relative}
 
-La fonction erreur\_relative.py donne la représentation de l'erreur relative en fonctions de l'azimut et de l'élévation du soleil permet de mettre en lumière des journées particulières comme par exemple le dysfonctionnement de l'acquisition des mesures, mais aussi la presence de masque ou de reflet impactant le pyranomètre. Les erreurs aberantes qui sont identifer grace à cette méthode peuvent donc etre supprimé.\\
+La fonction erreur\_relative.py donne la représentation de l'erreur relative en fonction de l'azimut et de l'élévation du soleil permet de mettre en lumière des journées particulières comme par exemple le dysfonctionnement de l'acquisition des mesures, mais aussi la présence de masques ou de reflet impactant le pyranomètre. Les erreurs aberrantes qui sont identifées grace à cette méthode peuvent donc être supprimées.\\
  
 \begin{figure}[H]
 \centering
@@ -341,7 +343,7 @@ La fonction erreur\_relative.py donne la représentation de l'erreur relative en
 
 \subsubsection{Histogramme}
 
-La fonction histogramme.py donne la représentation graphique de la répartition dune variable, dans notre cas la fonction donne la répartition du rayonnement diffus et de l'erreur relative.\\
+La fonction histogramme.py donne la représentation graphique de la répartition d'une variable, dans notre cas la fonction donne la répartition du rayonnement diffus et de l'erreur relative.\\
 
 \begin{figure}[H]
 \centering
@@ -357,19 +359,34 @@ La fonction histogramme.py donne la représentation graphique de la répartition
 
 \subsubsection{Selection des mesures entre deux intervalles}
 
-Deux fonctions ont été creer pour selectionner les mesures entre une periode donnée, la première permet d'avoir les mesures entre deux dates et la derniere permet d'avoir les mesure pour une tranche horaire spécifié. Ces deux foncions permettent de savoir qu'elle dispositif donne de meilleur mesure que ce soit pour le matin ou l'après-midi, et pendant les saison été hiver.
+Deux fonctions ont été créer pour sélectionner les mesures entre une période donnée, la première permet d'avoir les mesures entre deux dates et la dernière permet d'avoir les mesures pour une tranche horaire spécifiée.
 
 \subsubsection{éxécution de l'analyse statistique}
 
-Pour faciliter l'utilisation du programme celui-ci s'éxécute via un terminal, pour ce faire l'utilisateur doit juste renseigner le nom de son fichier de mesure, choisir les valeurs tests et les valeurs pour la référence. Si l'utilisateur le souhaite il est aussi en mesure de renseigner la periode sur laquel il souhaite l'analyse statistique.
+Pour faciliter l'utilisation du programme celui-ci s'exécute via un terminal, pour ce faire l'utilisateur doit juste renseigner le nom de son fichier de mesure, choisir les valeurs teste et les valeurs pour la référence. Si l'utilisateur le souhaite il est aussi en mesure de renseigner la période sur laquelle il souhaite l'analyse statistique.
 
 \subsubsection{Etallonage du cm121 avec le spn1}
 
-Le CM121 et le spn1 utilise tous deux un arc pour masquer le rayonnement direct du soleil, cet arc donne un angle de vue de 10.8° pour le cm121 et le spn1 comparer à un angle de vue de 4.5° pour le masque du tracker.
+Pour effectuer l'étalonnage du cm121, les mesures de référence sont celles du tracker. Nous cherchons à savoir si les mesures du CM121 sont plus proches du spn1 ou du tracker, si les mesures sont plus proche de celle du spn1 alors il semble préférable d'effectuer l'étalonnage avec les mesures du spn1. Le CM121 et le spn1 utilise tous deux un arc pour masquer le rayonnement direct du soleil, cet arc donne un angle de vue de 10.8° pour le cm121 et le spn1 comparer à un angle de vue de 5° pour le masque du tracker.\\
+L'analyse statistique est éffectuée entre le 01 janvier 2021 jusqu'au 01 avril 2021.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{image/comparaison_cm121_spn1/cm121_tracker_2021-01-01_2021-04-01/regression_avec_étalonnage_DHI cm121vsDHI tracker.png} 
+\caption{cm121 en fonction du tracker}  
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{image/comparaison_cm121_spn1/cm121_spn1_2021-01-01_2021-04-01/regression_avec_étalonnage_DHI cm121vsDHI spn1.png}  
+\caption{cm121 en fonction du spn1}  
+\end{figure}
+
+On constate que les variances sont approximativement les mêmes, qui plus est en étalonnant le cm121 avec le spn1 l'erreur quadratique moyenne et l'erreur absolue moyenne sont plus faibles et le coefficient de détermination est plus élevé. Les mesures du cm121 sont donc plus proches des mesures du spn1 que celles du tracker, il est donc possible d'étalonner le cm121 avec le spn1.  
 
 \subsubsection{Impact de la ventillation sur les mesures du cm121}
 
-Les mesures avec la ventillation opérationnelle ont été acquise entre le 21 avril 2021 et le 31 mai 2021, nous devons donc comparer les mesures avec ventillation et sans ventillation sur la meme periode de 41 jours, les mesures entre  entre le 21 avril 2021 et le 31 mai 2021 sont comparer aux mesures entre le 11 mars et le 20 avril.
+Les mesures avec la ventilation opérationnelle ont été acquise entre le 21 avril 2021 et le 31 mai 2021, nous devons donc comparer les mesures avec ventilation et sans ventilation sur une même période de 41 jours, les mesures entre le 21 avril 2021 et le 31 mai 2021 (avec ventillation) sont comparer aux mesures entre le 11 mars et le 20 avril (sans ventillation).
 
 \begin{figure}[H]
 \centering
@@ -395,8 +412,8 @@ Les mesures avec la ventillation opérationnelle ont été acquise entre le 21 a
 \caption{répartition du DHI sans ventillation}  
 \end{figure}
 
-Nous obtenons avec la mise en place de la ventillation un RMSE et un MAE plus élevé, dire que l'ajout de la ventillation entraine une augmentation de la dispersion des mesures semble fausse. Les histogramme nous montrent que pour les deux périodes la répartition du dhi est similaire. J'en conclue que nous ne pouvons pas voir un réel impact de la ventillation sur une période aussi petite.
-
+Les histogrammes nous montrent que pour les deux périodes la répartition du DHI est similaire.
+Nous obtenons avec la mise en place de la ventilation un RMSE et un MAE plus élevé, en revanche la variance est plus faible, les mesures ont donc moins de dispersion avec la ventilation. Pour obtenir des résultats plus concrets il faudrait réaliser la même étude sur une période plus longue.
 
 
 
