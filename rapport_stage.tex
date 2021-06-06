@@ -105,9 +105,9 @@
 \sf
 Je tiens tout d'abord à remercier ma tutrice de stage Mme Béatrice MOREL.\\
 ~\\
-Je tiens ensuite à remercier tout particulièrement M. Jeanty PATRICK, M. Mathieu DELSAUT et M. Christian BROUAT pour l'accompagnement durant le stage.\\
+Je tiens ensuite à remercier tout particulièrement les ingénieurs en recherche M. Jeanty PATRICK, M. Mathieu DELSAUT pour leurs accompagnement durant le stage.\\
 ~\\
-Je tiens aussi à remercier M. Yannis HOARAU pour l'utilisation de l'imprimante 3D.
+Je tiens aussi à remercier les techniciens de recherche et de formation M. Christian BROUAT  et M. Yannis HOARAU pour la mises à dispositions du matériels necessaire à ce stage.
  
  
 ~
@@ -356,7 +356,7 @@ Le programme retourne alors trois calendriers, un calendrier au format csv, un c
     \end{minipage}
 \end{figure}
 
-\subsubsection{Suppression des données non utilisés, non acquis et abérantes}
+\subsubsection{Suppression des données non utilisés, non acquises et abérantes}
 
 Le fichier de mesure comporte généralement des données non acquises pouvant bloquer l'exécution de certains programmes, mais aussi les données pour la nuit qui sont inintéressantes dans le cas du DHI ou du GHI, la création d'une fonction pour supprimer ces mesures fut nécessaire.
 
@@ -397,7 +397,23 @@ Les mesures du CM121 sont corrigées par une fonction qui calcule le facteur de 
 
 \subsubsection{Analyse statistique et étalonnage}
 
-Lors de l'étalonnage les mesures subissent une régression linéaire par rapport à des mesures de références, nous obtenons alors une droite d'équation $y = ax + b$ que nous voulons ramener pour obtenir une droite d'équation $y = x$.\\
+Le capteur du pyranomètre possède une sensitivité qui change à travers le temps, de ce fait le pyranomètre doit subir un étalonnage. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=5cm]{image/etallonnage/20210416_093654.jpg} 
+\caption{Sensitivité du pyranomètre}  
+\end{figure}
+
+La nouvelle sensibilité peut etre obtenu en ayant un pyranomètre de réfèrence. 
+
+\begin{flalign*}
+&DHI_{mesure}=a.DHI_{r\acute{e}f\acute{e}rence} &&\\
+&\frac{U}{S_{mesure}} =a. \frac{U}{S_{r\acute{e}f\acute{e}rence}}&&\\
+&S_{mesure}.a = S_{r\acute{e}f\acute{e}rence}&&\\
+\end{flalign*}
+
+Pour obtenir la nouvelle sensibilité de notre pyranomètre nous devons alors calculer le coefficient 'a', pour obtenir ce coefficient nous réalisons une régression linéaire.Nous obtenons alors une droite d'équation $y = ax + b$ ou 'b' est négligé.\\
 ~\\
 La fonction développé permet d'effectuer l'étalonnage mais aussi l'analyse statistique. L'analyse statistique permet d'obtenir sur le graphique le coefficient de détermination $R^2$, la variance, l'erreur quadratique moyenne et l'erreur absolue moyenne.\\
 ~\\
@@ -427,12 +443,17 @@ L'erreur absolue moyenne (MAE) représente l'erreur systématique, toutes les di
 
 
 ~\\
-La fonction renvoie le graphique ci-dessous.
+La fonction renvoie les graphiques ci-dessous.
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{image/etallonnage/2.png} 
+\caption{Mesure sans étalonnage pour mars 2021}  
+\end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{image/etallonnage/1.png} 
-\caption{régression linéaire pour mars 2021}  
+\caption{Mesure avec étalonnage pour mars 2021}  
 \end{figure}
 
 \subsubsection{Représentation graphique de l'erreur relative}
@@ -468,7 +489,7 @@ Deux fonctions ont été créer pour sélectionner les mesures entre une périod
 
 \subsubsection{éxécution de l'analyse statistique}
 
-Pour faciliter l'utilisation du programme celui-ci s'exécute via un terminal, pour ce faire l'utilisateur doit juste renseigner le nom de son fichier de mesure, choisir les valeurs pour la mesure et les valeurs pour la référence. Si l'utilisateur le souhaite il est aussi en mesure de renseigner la période sur laquelle il souhaite l'analyse statistique.
+Pour faciliter l'utilisation du programme celui-ci s'exécute via un terminal, pour ce faire l'utilisateur doit juste renseigner le nom de son fichier de mesure, choisir les valeurs pour la mesure et les valeurs pour la référence et lancer l'analyse. Si l'utilisateur le souhaite il est aussi en mesure de renseigner la période sur laquelle il souhaite l'analyse statistique que ce soit entre deux, une tranche horaie ou entre deux dates pour une tranche horaire.
 
 
 \subsubsection{Etallonage du cm121 avec le spn1}
@@ -565,7 +586,9 @@ Le stage m'a permis de découvrir un nouveau langage de programmation, ainsi que
 
 \section{Conclusion}
 
-Le stage a mis en lumière que les mesures du cm121 sont plus proches du spn1 que du tracker, l'étude statistique a montré une variance similaire dans le cas ou le cm121 est comparé au tracker et dans le cas ou le cm121 est comparé au spn1, ce qui signifie que dans les deux cas la dispersion des mesures est la même. La comparaison avec le spn1 donne l'erreur quadratique  moyenne et l'erreur absolue moyenne la plus faible, ce qui montre que les mesures ont moins moins d'erreur élevée et systématique, les mesures du cm121 sont donc plus proche du spn1 que du tracker.\\
+Les missions demandés lors du stage fut mener à bien, que ce soit le calendrier de maintenance du cm121 faisant apparaitre les maintenances minimum a éffectué, la mise en place d'un dispositf permettant un réglage précis et simple de la position nord-sud mais encore le développement de programme sous python permettant l'analyse statistique d'un jeu de donnée.\\
+~\\
+Le stage a permis de mettre en lumière que les mesures du cm121 sont plus proches du spn1 que du tracker, l'étude statistique a montré une variance similaire dans le cas ou le cm121 est comparé au tracker et dans le cas ou le cm121 est comparé au spn1, ce qui signifie que dans les deux cas la dispersion des mesures est la même. La comparaison avec le spn1 donne l'erreur quadratique  moyenne et l'erreur absolue moyenne la plus faible, ce qui montre que les mesures ont moins moins d'erreur élevée et systématique, les mesures du cm121 sont donc plus proche du spn1 que du tracker.\\
 ~\\
 Le stage a aussi montré que la ventilation permet d'avoir moins de dispersion, mais paradoxalement elle donne une erreur quadratique moyenne et une erreur absolue moyenne plus élevé, divers facteurs peuvent expliquer cela comme notamment une période d'acquisition trop courte, pour valider ce résultat il semble judicieux de refaire cette analyse statistique pour une plus grande période.
 
