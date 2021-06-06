@@ -89,7 +89,7 @@
 \begin{tabular}{lll}
    \sf Stagiare: &\sf Responsable Pédagogique: &\sf Tutrice de stage : \\
   \sf Alexandre PARASSOURAMIN &\sf Mme Béatrice MOREL &\sf Mme Béatrice MOREL \\
-   \sf Master 1 énergie& &\\
+   \sf Master 1 énergie& \sf Maître de conférences H.D.R & \sf Maître de conférences H.D.R\\
   \sf n$^\circ$~étudiant : 35003702& & \\
 \end{tabular}
 
@@ -139,7 +139,7 @@ Je tiens aussi à remercier M. Yannis HOARAU pour l'utilisation de l'imprimante 
 
 Dans le cadre de mon master 1 j'ai dû réaliser un stage de huit semaines, le stage s'est déroulé au sein du laboratoire LE2P de l'université de la Réunion.\\
 ~\\
-Le stage avait pour objectif le montage d'un pyranomètre à arc d'ombrage cm121, l'élaboration d'un calendrier de maintenance pour le cm121, la mise en place d'un protocole permettant le réglage la position Nord-sud, le développement des programmes sous python permettant l'analyse statistique des mesures de rayonnement diffus. Le stage vise aussi à répondre à deux questions, la premières est de savoir si les mesures du cm121 sont plus proches du spn1 ou du tracker, et finalement de savoir si l'installation d'une ventilation à un impact sur les mesures du CM121.
+Le stage avait pour objectif le montage d'un pyranomètre à arc d'ombrage cm121, l'élaboration d'un calendrier de maintenance pour le cm121, la mise en place d'un protocole permettant le réglage la position Nord-sud, le développement des programmes sous python permettant l'analyse statistique des mesures de rayonnement diffus. Le stage vise aussi à répondre à deux questions, la premières est de savoir si les mesures du rayonnement diffus du cm121 sont plus proches  du spn1 ou du tracker, et finalement de savoir si l'installation d'une ventilation à un impact sur les mesures du rayonnement diffus du CM121.
  
 
 \section{Environnement}
@@ -362,7 +362,36 @@ Le fichier de mesure comporte généralement des données non acquises pouvant b
 
 \subsubsection{Calcul des facteurs de correction}
 
-Les données du cm121 doivent être corrigées car l'arc d'ombrage masque une partie du diffus. L'expression permettant de calculer le facteur de correction donné dans la datasheet se base sur les travaux de Drummond (1956). Cette correction fait l'hypothèse que le ciel est isotropique ce qui donne une correction des mesures purement géométrique (voire annexe).\\
+Les données du cm121 doivent être corrigées car l'arc d'ombrage masque une partie du diffus. L'expression permettant de calculer le facteur de correction donné dans la datasheet se base sur les travaux de Drummond. Cette correction fait l'hypothèse que le ciel est isotropique ce qui donne une correction des mesures purement géométrique en se basant sur les deux figures suivante.
+
+\begin{figure}[H]
+    \begin{minipage}[c]{.46\linewidth}
+        \centering
+        \includegraphics[width=6cm]{image/facteur_correction/1.PNG}  
+		\caption{Schéma de l'arc d'ombrage vue de haut}
+    \end{minipage}
+    \hfill%
+    \begin{minipage}[c]{.46\linewidth}
+        \centering
+        \includegraphics[width=6cm]{image/facteur_correction/2.PNG} 
+        \caption{Schéma de l'arc d'ombrage vue de côté}
+    \end{minipage}
+\end{figure}
+
+ Le facteur de correction C est obtenu par la relation : 
+
+\begin{flalign*}
+&C=\frac{1}{1-S}&&\\
+&&\\
+&Ou~S~est~ le~ rayonnement~ diffus~ intercept\acute{e} ~par~ l'arc~ d'ombrage&&\\
+&S = \frac{2V.cosD.(U_0.sinB.sinD+sinU_0.cosB.cosD)}{\pi}&&\\
+&Avec\\
+&U_0=cos^{-1}(-tanB.tanD)&&\\
+&V~:~0.185~rad&&\\
+&B ~:~ latitude ~du ~site&&\\
+&D~:~d\acute{e}clinaison&&\\
+\end{flalign*}
+
 
 Les mesures du CM121 sont corrigées par une fonction qui calcule le facteur de correction en se basant sur l'heure ou la mesure a été prise et l'applique par la suite aux mesures.
 
@@ -459,6 +488,22 @@ L'analyse statistique est éffectuée entre le 01 janvier 2021 jusqu'au 01 avril
 \caption{cm121 en fonction du spn1}  
 \end{figure}
 
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+ \hline
+  & $R^2$ & $\sigma ^2 [\frac{W^2}{m^4}]$ & RMSE [\%] & MAE [\%] \\ 
+  \hline
+ CM121 vs tracker & 0.96 & 23992.6 & 17.7 & 9.7\\ 
+ \hline
+ CM121 vs spn1 & 0.97 & 24047.3 & 15.1 & 8.6 \\ 
+ \hline
+\end{tabular}
+\caption{Indicateur statistique CM121 vs tracker et CM121 vs spn1}
+\end{center}
+\end{table}
+
+
 On constate que les variances sont approximativement les mêmes, qui plus est en étalonnant le cm121 avec le spn1 l'erreur quadratique moyenne et l'erreur absolue moyenne sont plus faibles et le coefficient de détermination est plus élevé. Les mesures du cm121 sont donc plus proches des mesures du spn1 que celles du tracker, il est donc possible d'étalonner le cm121 avec le spn1.  
 
 \subsubsection{Impact de la ventillation sur les mesures du cm121}
@@ -467,27 +512,48 @@ Les mesures avec la ventilation opérationnelle ont été acquise entre le 21 av
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=15cm]{image/impact_ventillation/avril_mai_2021/regression_avec_étalonnage_DHI cm121vsDHI tracker.png} 
-\caption{régression linéaire période avec ventillation}  
+\includegraphics[width=15cm]{image/impact_ventillation/archive_2021-03-11_2021-04-20/regression_avec_étalonnage_DHI cm121vsDHI tracker.png}  
+\caption{Sans ventilation}  
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=15cm]{image/impact_ventillation/archive_2021-03-11_2021-04-20/regression_avec_étalonnage_DHI cm121vsDHI tracker.png}  
-\caption{régression linéaire période sans ventillation}  
+\includegraphics[width=15cm]{image/impact_ventillation/avril_mai_2021/regression_avec_étalonnage_DHI cm121vsDHI tracker.png} 
+\caption{Avec ventilation}  
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{image/impact_ventillation/archive_2021-03-11_2021-04-20/histogramme_3.png} 
+\caption{répartition du DHI sans ventilation}  
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{image/impact_ventillation/avril_mai_2021/histogramme_3.png}  
-\caption{répartition du DHI avec ventillation}  
+\caption{répartition du DHI avec ventilation}  
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=15cm]{image/impact_ventillation/archive_2021-03-11_2021-04-20/histogramme_3.png} 
-\caption{répartition du DHI sans ventillation}  
-\end{figure}
+
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+ \hline
+  & $R^2$ & $\sigma ^2 [\frac{W^2}{m^4}]$ & RMSE [\%] & MAE [\%] \\ 
+  \hline
+ Avec ventilation & 0.86 & 15741.5 & 31.8 & 14.4\\ 
+ \hline
+ Sans ventilation & 0.95 & 22587.1 & 16.3 & 9.2 \\ 
+ \hline
+\end{tabular}
+\caption{Indicateur statistique pour l'impact de la ventilation sur les mesures du CM121}
+\end{center}
+\end{table}
+
 
 Les histogrammes nous montrent que pour les deux périodes la répartition du DHI est similaire.
 Nous obtenons avec la mise en place de la ventilation un RMSE et un MAE plus élevé, en revanche la variance est plus faible, les mesures ont donc moins de dispersion avec la ventilation. Pour obtenir des résultats plus concrets il faudrait réaliser la même étude sur une période plus longue.
