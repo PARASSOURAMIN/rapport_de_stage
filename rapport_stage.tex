@@ -71,12 +71,17 @@
    \begin{minipage}[c]{.46\linewidth}
     \begin{center}
     	%-------------------LOGO--------------------
-       \includegraphics[width=5cm]{../../../le2p.png}   
+       \includegraphics[width=6cm]{../../../csm_doc-commun-logo_FST_couleur_5ed57558dd.png}    
         \end{center}
  \end{minipage}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \center
 \textsc{\LARGE} \\[3cm]
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=5cm]{../../../le2p.png} 
+\end{figure}
 
 \HRule \\[0.4cm]
 { \huge \bfseries Rapport de stage\\ [0.15cm] }
@@ -103,9 +108,9 @@
 
 \section*{Remerciements}
 \sf
-Je tiens tout d'abord à remercier ma tutrice de stage Mme Béatrice MOREL.\\
+Je tiens tout d'abord à remercier ma tutrice de stage Mme Béatrice MOREL maître de conférences.\\
 ~\\
-Je tiens ensuite à remercier tout particulièrement les ingénieurs en recherche M. Jeanty PATRICK, M. Mathieu DELSAUT pour leurs accompagnement durant le stage.\\
+Je tiens ensuite à remercier tout particulièrement les ingénieurs en recherche M. Patrick JEANTY , M. Mathieu DELSAUT pour leurs accompagnement durant le stage.\\
 ~\\
 Je tiens aussi à remercier les techniciens de recherche et de formation M. Christian BROUAT  et M. Yannis HOARAU pour la mises à dispositions du matériels necessaire à ce stage.
  
@@ -139,7 +144,7 @@ Je tiens aussi à remercier les techniciens de recherche et de formation M. Chri
 
 Dans le cadre de mon master 1 j'ai dû réaliser un stage de huit semaines, le stage s'est déroulé au sein du laboratoire LE2P de l'université de la Réunion.\\
 ~\\
-Le stage avait pour objectif le montage d'un pyranomètre à arc d'ombrage cm121, l'élaboration d'un calendrier de maintenance pour le cm121, la mise en place d'un protocole permettant le réglage la position Nord-sud, le développement des programmes sous python permettant l'analyse statistique des mesures de rayonnement diffus. Le stage vise aussi à répondre à deux questions, la premières est de savoir si les mesures du rayonnement diffus du cm121 sont plus proches  du spn1 ou du tracker, et finalement de savoir si l'installation d'une ventilation à un impact sur les mesures du rayonnement diffus du CM121.
+Le stage avait pour objectif le montage d'un pyranomètre à arc d'ombrage cm121, l'élaboration d'un calendrier de réglage pour le cm121, la mise en place d'un protocole permettant le réglage la position Nord-sud, le développement des programmes sous python permettant l'analyse statistique des mesures de rayonnement diffus. Le stage vise aussi à répondre à deux questions, la premières est de savoir si les mesures du rayonnement diffus du cm121 sont plus proches  du spn1 ou du tracker, et finalement de savoir si l'installation d'une ventilation à un impact sur les mesures du rayonnement diffus du CM121.
  
 
 \section{Environnement}
@@ -153,14 +158,46 @@ L'opération scientifique gisement Solaire : variabilité à La Réunion et en z
 L'opération scientifique optimisation-contrôle et stockage de l'énergie, se penche sur la conception et le design d’une Pile A Combustible réversible ainsi que la modélisation et le contrôle d’une Pile A Combustible de type PEMFC.\\ 
 ~\\
 L'opération scientifique réseau interconnecté et transport de l'énergie étudie l’évolution énergétique d'un réseau, le développement de topologies et de protocoles de routage à faible coût énergétique et la récupération d’énergie RF.
-
+~\\
 
 
 \section{Les travaux effectués et les apports du stage}
 
+\subsection{Présentation du cm121}
+
+En énergie solaire il existe trois type de rayonnement. Le rayonnement diffus (DHI) est issu de la diffraction de la lumière par les nuages et les particules en suspension dans l'atmosphère. Le rayonnement direct (DNI) est obtenue par une surface perpendiculaire au rayonnement. Le rayonnement global (GHI) est la somme du rayonnement diffus et direct recu  par une surface horizontal.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{image/presentation_cm121/1.jpg} 
+\caption{Rayonnement diffus, direct et global}
+\end{figure}
+
+~\\
+Le cm121 permet de mesurer le rayonnement diffus, le principe consiste à masquer le rayonnement direct avec un arc que l'on nomme arc d'ombrage, cet arc possede une barre coulissante que l'on doit régler régulierement du fait de la position du soleil qui change au cours de l'année.  Outre le cm121, il existe d'autre dispositif permettant de mesurer le rayonnment diffus, comme par exmple le spn1 et le tracker. 
+
+\begin{figure}[H]
+    \begin{minipage}[c]{.2\linewidth}
+        \centering
+        \includegraphics[width=5cm]{image/presentation_cm121/2.jpg}  
+        \caption{cm121}
+    \end{minipage}
+    \hfill%
+    \begin{minipage}[c]{.2\linewidth}
+        \centering
+        \includegraphics[width=5cm]{image/presentation_cm121/3.jpg}  
+        \caption{tracker}
+    \end{minipage}
+    \hfill%
+    \begin{minipage}[c]{.3\linewidth}
+        \centering
+        \includegraphics[width=5cm]{image/presentation_cm121/4.jpg} 
+        \caption{spn1}
+    \end{minipage}
+\end{figure}
 
 
-\subsection{Montage du CM121C}
+\subsection{Montage du CM121}
 
 Le CM121 comportes cinq parties, la base, le pilier, la barre transversale, la barre coulissante et le support pour pyranomètre. Le montage consiste juste à assembler chaque partie à l'aide des boulons fournis.
 
@@ -171,7 +208,7 @@ Le CM121 comportes cinq parties, la base, le pilier, la barre transversale, la b
 \end{figure}
 
 
-La première étape pour le positionnement du cm121 consiste à s'assurer que sa base est plane, pour se faire la base comporte 3 boulons permettant à l'aide d'un niveau à bulle de mettre la base à l'horizontale.. 
+La première étape pour le positionnement du cm121 consiste à s'assurer que sa base est plane, pour se faire la base comporte 3 boulons permettant à l'aide d'un niveau à bulle de mettre la base à l'horizontale. 
 
 \begin{figure}[H]
 \centering
@@ -180,7 +217,7 @@ La première étape pour le positionnement du cm121 consiste à s'assurer que sa
 \end{figure}
 
 
-La barre coulissante doit être parallèle à l'axe polaire, pour se faire l'angle entre l'horizon et la barre doit être égal à la latitude du site, pour l'Université de la Réunion cela implique un angle de -20.9$^\circ$. L'angle est réglé grace à une application mobile qui offre une précision acceptable, le réglage pouvant se faire à 1-4 degrés prêts selon la datasheet.
+La barre coulissante doit être parallèle à l'axe polaire, pour se faire l'angle entre l'horizon et la barre doit être égal à la latitude du site, pour l'Université de la Réunion cela implique un angle de -20.9$^\circ$. L'angle est réglé grace à une application mobile de mesure d'inclinaison qui offre une précision acceptable, le réglage pouvant se faire à 1-4 degrés prêts selon la datasheet.
 
 \begin{figure}[H]
 \centering
@@ -189,7 +226,7 @@ La barre coulissante doit être parallèle à l'axe polaire, pour se faire l'ang
 \end{figure}
 
 
-Le pyranomètre est installé sur son socle. Une fois effectuer la ventilation est installé est raccordé en 12 volts. La ventilation permet de garder le pyranomètre à température constante, permettant ainsi de faire l'acquisition des mesures dans les mêmes conditions de températures toute l'année.
+Le pyranomètre est installé sur son socle. Une fois effectuer le module de ventilation est installé est raccordé en 12 volts. La ventilation permet de garder le pyranomètre à température constante, permettant ainsi de faire l'acquisition des mesures dans les mêmes conditions de températures toute l'année.
 
 \begin{figure}[H]
 \centering
@@ -197,14 +234,14 @@ Le pyranomètre est installé sur son socle. Une fois effectuer la ventilation e
 \caption{Installation pyranomètre}
 \end{figure}
 
-
-L'étape la plus importante et le réglage de la position nord-sud, un mauvais réglage nord-sud peuvent entrainer des données aberrantes, du fait que le capteur est susceptible de recevoir du rayonnement global à certains moments de la journée. Une première approche pourrait consister à utiliser un compas magnétique mais la présence d'éléments ferreux donne une indication fausse du nord. La méthode retenue est l'utilisation d'une boussole solaire.\\
+\subsection{Alignement nord-sud}
+L'étape la plus importante et le réglage de la position nord-sud, un mauvais réglage nord-sud peuvent entrainer des données aberrantes, du fait que le capteur est susceptible de recevoir du rayonnement global à certains moments de la journée. Une première approche pourrait consister à utiliser un compas magnétique mais la présence d'éléments ferro-magnétique donne une indication fausse du nord. La méthode retenue est l'utilisation d'une boussole solaire.\\
 ~~\\
 Le principe de la boussole solaire est de projeter l'ombre du soleil sur une surface plane, sur cette surface plane se trouve un cadran gradué représentant l'azimut, en connaissant l'azimut du soleil et en reportant l'ombre sur le cadran nous obtenons la position nord-sud.\\
 
 \subsubsection{Alignement nord-sud par pointage géographique}
 
-Le premier alignement Nord-sud fut effectué par une boussole solaire totalement indépendante de l'arc d'ombrage, le but consiste à l'aide d'une feuille excel et de l'heure actuelle, de calculer l'azimut, de la reporter sur la boussole solaire en la faisant pivoter et de pointer un point géographique passant dans l'axe nord-sud de la boussole solaire. Une fois ce point géographique trouvé, nous effectuons la même démarche en reportant ce point dans l'axe de la barre coulissante.\\
+La méthode la plus aboutit avant le stage pour l'alignement nord-sud consiste à utiliser une boussole solaire traditionnele, le but consiste à l'aide d'une feuille excel et de l'heure actuelle, de calculer l'azimut, de la reporter sur la boussole solaire en la faisant pivoter et de pointer un point géographique passant dans l'axe nord-sud de la boussole solaire. Une fois ce point géographique trouvé, nous effectuons la même démarche en reportant ce point dans l'axe de la barre coulissante.\\
 
 Cette méthode donne de bons résultats, mais elle nous expose à des erreurs d'angle notamment lors du pointage du point géographique et le vent faisant bouger le fil, elle a aussi pour inconvénient une mise en place assez lourde avec l'obligation d'avoir un ordinateur portable sous la main.\\	
 
@@ -222,11 +259,9 @@ Cette méthode donne de bons résultats, mais elle nous expose à des erreurs d'
 
 \subsubsection{Alignement nord-sud par boussole solaire fixe}   
 
-Pour pallier les problèmes de la boussole solaire traditionnelle, il fit élaborer une boussole solaire fixe. Le but est de faciliter le réglage nord-sud, mais aussi de diminuer les erreurs d'angles de la boussole traditionnelle, pour se faire la boussole devra être fixée à la barre transversale du cm121.\\
+Pour pallier aux problèmes de la boussole solaire traditionnelle, j'ai réalisé durant le stage une boussole solaire fixe. Le but est de faciliter le réglage nord-sud, mais aussi de diminuer les erreurs d'angles de la boussole traditionnelle, pour se faire la boussole devra être fixée à la barre transversale du cm121.\\
 ~\\
-Pour faciliter la maintenance le choix de la conception s'est porté sur l'impression 3D, la modélisation fut effectué sur le logiciel fusion 360 (figure *). La boussole comporte 4 parties imprimer en 3D (deux bases et deux longerons), une plaque de plexiglas permettant de placer notre cadran d'azimut et une tige filetée qui sert de support au fil.\\
-
-
+Pour faciliter la maintenance de la boussole en cas de casse, le choix de la conception s'est porté sur l'impression 3D, la modélisation fut effectué sur le logiciel fusion 360. La boussole comporte 4 parties imprimer en 3D (deux bases et deux longerons), une plaque de plexiglas permettant de placer notre cadran d'azimut et une tige filetée qui sert de support au fil.\\
 
 Les quatre parties imprimées en 3D sont assemblées à l'aide de quatre boulons de 3*20mm.\\
 
@@ -254,7 +289,14 @@ Le cadran d'azimut est imprimé sur du papier ordinaire puis plastifié pour ré
 
 
 Viens ensuite la mise en place de la tige filetée de 3 mm qui supporte le fil. Le fil passe dans l'intersection du cadran d'azimut et la plaque de plexiglas par un trou de 3 mm, cela permet de réduire les effets du vent sur l'oscillation du fil.\\
-Le cadran est par la suite fixé à la barre transversale à l'aide de Colliers rilsan, la plaque de plexiglas doit ensuite être réglée à l'horizontale, pour se faire un niveau de surface est utilisé et les ajustements se font par les trois boulons de 3*30mm.
+
+ \begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{image/montage/boussole_solaire/1.png} 
+\caption{Boussole solaire installée sur le cm121}  
+\end{figure}
+
+Le cadran est par la suite fixé à la barre transversale à l'aide de Colliers rilsan.
 
  \begin{figure}[H]
 \centering
@@ -262,9 +304,17 @@ Le cadran est par la suite fixé à la barre transversale à l'aide de Colliers 
 \caption{Boussole solaire installée sur le cm121}  
 \end{figure}
 
+La plaque de plexiglas doit ensuite être réglée à l'horizontale, pour se faire un niveau de surface est utilisé et les ajustements se font par les trois boulons de 3*30mm.
 
-Nous devons maintenant connaitre l'azimut du soleil, la solution la plus simple est d'utiliser un site internet comme par exemple suncalc.org. L'azimut obtenu doit ensuite être reporté sur le cadran, pour se faire il suffit de faire pivoter la base du cm121 sur son axe vertical. Le positionnement Nord-sud est effectué.\\
-Cette méthode comporte quand même des limites, elle ne marche que pour les jours ensoleillés et la présence de masques cache à certains moments de la journée le soleil ce qui empêche le positionnement nord-sud. 
+
+ \begin{figure}[H]
+\centering
+\includegraphics[width=6cm, angle=-90]{image/montage/boussole_solaire/7.jpg} 
+\caption{Réglage de la plaque de plexiglas}
+\end{figure}
+
+Nous devons maintenant connaitre l'azimut du soleil, la solution la plus simple est d'utiliser un site internet via notre spatphone comme par exemple suncalc.org. L'azimut obtenu doit ensuite être reporté sur le cadran, pour se faire il suffit de faire pivoter la base du cm121 sur son axe vertical. Le positionnement Nord-sud est effectué.\\
+Cette méthode comporte quand même des limites, elle ne marche que pour les jours ensoleillés et la présence de masques cache à certains moments de la journée le soleil ce qui empêche le positionnement nord-sud, mais le cm121 sera à l'avenir deplacé sur une plateforme ou aucun masque ne génera pour le positionement nord-sud. 
  
 
 \subsection{Programmation}
@@ -275,9 +325,10 @@ Tous les programmes développés sont disponibles sur le github du LE2P [6].
 
 \subsubsection{Calendrier du Cm121}
 
-Le calendrier de maintenance du CM121 comporte deux informations, l'heure du midi solaire et la position de la barre coulissante.
+Avant le stage, le réglage du cm121 se faisait de manière visuelle, on régler la barre coulissante dans la position souhaité. l'une de mes missions était le dévellopement d'un calendrier pour le réglage du cm121. Sur ce calendrier devait figurer,les réglages pour chaque jour de l'année, les reglages minimum devant etre effectué et l'heure du midi solaire qui sert entre autre à verifier l'alignement nord-sud sur la boussole solaire fixe, si l'ombre au midi solaire indique 0° qoit le nord, alors l'alignement est effectif.\\
+~\\
 
-La position de la barre coulissante est calculée en fonction de la déclinaison du soleil, par l'expression : 
+Le réglage de la barre coulissante est calculée en fonction de la déclinaison du soleil, par l'expression : 
 
 \begin{flalign*}
 &L = 297 tan (\delta)&&\\
@@ -301,7 +352,7 @@ Nous pouvons retrouver cette équation en calculant le côté opposé à l'angle
 &L = 297tan(\delta)&&\\
 \end{flalign*}
 
-Le programme calcul aussi les maintenances minimums à éffectuer en se basant sur la déclinaison du soleil. Etant donner que la position de la barre coulissante est obtenue en fonction de la déclinaison nous pouvons calculer les jours de maintenance minimun au cours de l'année. Pour se faire on place la barre coulissante pour le jour correspondant (la position normale), puis nous deplacons la barre pour obtenir l'ombre à 0.5mm du dome en verre du pyranometre (la position limite).
+Le programme calcul aussi les maintenances minimums à éffectuer en se basant sur la déclinaison du soleil. Etant donner que la position de la barre coulissante est obtenue en fonction de la déclinaison, nous pouvons calculer les jours de maintenance minimun au cours de l'année. Pour se faire on place la barre coulissante pour le jour correspondant (la position normale), puis nous deplacons la barre pour obtenir l'ombre à 0.5mm du dome en verre du pyranometre (la position limite).
 
 \begin{figure}[H]
     \begin{minipage}[c]{.46\linewidth}
@@ -318,16 +369,22 @@ Le programme calcul aussi les maintenances minimums à éffectuer en se basant s
 \end{figure}
 
 
-Il suffit maintenant de savoir la déclinaison pour la position normale et la position limite, pour savoir la déclinaison de la position limite il nous suffit de lire la position de la barre coulissante et de regarder sur notre calendrier de maintenance à quel jour elle correspond et de calculer la déclinaison. On peut désormais calculer la différence des déclinaisons.\\
+Il suffit maintenant de savoir la déclinaison pour la position normale et la position limite, pour obtenir la déclinaison de la position limite il nous suffit de lire la position de la barre coulissante et de regarder sur notre calendrier de maintenance le jour correspondant, il nous suffit maintenant de calculer la déclinaison pour ce jour. On peut désormais calculer la différence des déclinaisons.\\
 
 \begin{flalign*}
 &\Delta \delta=\delta_{position~normale}-\delta_{position~limite}&&\\
 &\Delta \delta=1.3^\circ&&\\
 \end{flalign*}
 
-Nous trouvons un delta de 1.3°, cela signifie que si la déclinaison subit une variation de $\pm 1.3^\circ$ entre la derniere maintenance et aujourd'hui nous devons repositionner la barre coulissante.\\
+Nous trouvons un delta de 1.3°, cela signifie que si la déclinaison subit une variation de $\pm 1.3^\circ$ entre la derniere maintenance et aujourd'hui nous devons effectuer le réglage de la barre coulissante.\\
 ~\\
-Le programme retourne alors trois calendriers, un calendrier au format csv, un calendrier au format xlsx et un calendrier ics. Le calendrier csv est obtenu par du texte brut ce qui signifie qu'il fonctionne avec tous les logiciels de traitement de texte, mais ce format ne permet pas la mise en forme. Le calendrier xlsx permet d'intégrer la mise en forme au calendrier, nous obtenons ainsi des codes couleurs, en vert les jours fériés, en bleu les weekends et en rouge les maintenances minimums à effectuer sur le cm121. Le calendrier ics permet d'avoir les positions du cm121 au format iCalendar ce qui permet entre autres d'avoir le midi-solaire, la position de la barre coulissante et les maintenance minimum via son smartphone.\\
+Le programme retourne alors trois calendriers, un calendrier au format csv, un calendrier au format xlsx et un calendrier ics. \\
+~\\
+Le calendrier csv est obtenu par du texte brut ce qui signifie qu'il fonctionne avec tous les logiciels de traitement de texte, mais ce format ne permet pas la mise en forme. \\
+~\\
+Le calendrier xlsx permet d'intégrer la mise en forme au calendrier, nous obtenons ainsi des codes couleurs, en vert les jours fériés, en bleu les weekends et en rouge les maintenances minimums à effectuer sur le cm121. \\
+~\\
+Le calendrier ics permet d'avoir les positions du cm121 au format iCalendar ce qui permet entre autres d'avoir le midi-solaire, la position de la barre coulissante et les maintenance minimum via son smartphone par des notifications, cela offre une souplesse d'utilisation.\\
 
 \begin{figure}[H]
 \centering
@@ -358,11 +415,12 @@ Le programme retourne alors trois calendriers, un calendrier au format csv, un c
 
 \subsubsection{Suppression des données non utilisés, non acquises et abérantes}
 
-Le fichier de mesure comporte généralement des données non acquises pouvant bloquer l'exécution de certains programmes, mais aussi les données pour la nuit qui sont inintéressantes dans le cas du DHI ou du GHI, la création d'une fonction pour supprimer ces mesures fut nécessaire.
+Durant le stage j'avais à disposition les fichiers de mesures du rayonnement diffus pour le cm121, le spn1 et le tracker.\\
+Les fichiers de mesures comportent généralement des données erronnées pouvant bloquer l'exécution de certains programmes, c'est données sont repérer sous python car elles ont pour valeur "Nan", "inf" et "-inf", mais aussi les données pour la nuit qui sont inintéressantes pour l'étude du rayonnement diffus, la création d'une fonction pour supprimer ces mesures fut nécessaire. Elle consiste a repérer ces valeurs et à supprimer les lignes correspondantes.
 
 \subsubsection{Calcul des facteurs de correction}
 
-Les données du cm121 doivent être corrigées car l'arc d'ombrage masque une partie du diffus. L'expression permettant de calculer le facteur de correction donné dans la datasheet se base sur les travaux de Drummond. Cette correction fait l'hypothèse que le ciel est isotropique ce qui donne une correction des mesures purement géométrique en se basant sur les deux figures suivante.
+Les mesures du cm121 doivent être corrigées car l'arc d'ombrage masque une partie du diffus. L'expression permettant de calculer le facteur de correction donné par le fabriquant du cm121 se base sur les travaux de Drummond. Cette correction fait l'hypothèse que le ciel est isotropique ce qui donne une correction des mesures purement géométrique en se basant sur les deux figures suivante.
 
 \begin{figure}[H]
     \begin{minipage}[c]{.46\linewidth}
@@ -378,7 +436,7 @@ Les données du cm121 doivent être corrigées car l'arc d'ombrage masque une pa
     \end{minipage}
 \end{figure}
 
- Le facteur de correction C est obtenu par la relation : 
+Le facteur de correction C est obtenu par la relation : 
 
 \begin{flalign*}
 &C=\frac{1}{1-S}&&\\
@@ -443,7 +501,7 @@ L'erreur absolue moyenne (MAE) représente l'erreur systématique, toutes les di
 
 
 ~\\
-La fonction renvoie les graphiques ci-dessous.
+La fonction renvoie les graphiques ci-dessous, avec en rouge une densité de point élevé et en blau une densité de point faible.
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{image/etallonnage/2.png} 
@@ -456,32 +514,40 @@ La fonction renvoie les graphiques ci-dessous.
 \caption{Mesure avec étalonnage pour mars 2021}  
 \end{figure}
 
+
 \subsubsection{Représentation graphique de l'erreur relative}
 
+L'erreur relative $\delta \alpha_r$ est obtenu par :
+\begin{flalign*}
+&\delta \alpha_r = \frac{valeur~mesur\acute{e}e-valeur~r\acute{e}f\acute{e}rence}{|valeur~r\acute{e}f\acute{e}rence|} &&
+\end{flalign*}
+
 Il est intéressant d'avoir la représentation de l'erreur relative en fonction de l'azimut et de l'élévation du soleil, cela permet de mettre en lumière des journées particulières comme par exemple le dysfonctionnement de l'acquisition des mesures, mais aussi la présence de masques ou de reflet impactant le pyranomètre. Les erreurs aberrantes qui sont identifées grace à cette méthode peuvent donc être supprimées.\\
-La fonction renvoie le graphique ci-dessous.
+~\\
+La fonction développée renvoie le graphique ci-dessous, nous constatons des erreurs relative élevées pour le lever et le coucher du soleil, mais aussi durant certaine journée.
  
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{image/erreur_relative/1.png} 
-\caption{erreur relative}  
+\caption{erreur relative pour mars 2021}  
 \end{figure}
 
 \subsubsection{Histogramme}
 
-La dernière fonction pour l'analyse statistique donne la représentation graphique de la répartition d'une variable, dans notre cas la fonction donne la répartition du rayonnement diffus et de l'erreur relative.\\
+La dernière fonction pour l'analyse statistique est l'histogramme, il donne la représentation graphique de la répartition d'une variable, dans notre cas la fonction donne la répartition du rayonnement diffus et de l'erreur relative. C'est une information supplémentaire, elle nous permet de savoir si le ciel pour la période souhaitée était plutot dégage ou nuageuse, mais aussi si \\
 Elle renvoie les graphiques ci-dessous.
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{image/histogramme/1.png} 
-\caption{régression linéaire}  
+\caption{Répartion du diffus}  
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{image/histogramme/2.png}  
-\caption{régression linéaire}  
+\caption{Répartition de l'erreur relative}  
 \end{figure}
+
 
 \subsubsection{Selection des mesures entre deux intervalles}
 
@@ -494,7 +560,28 @@ Pour faciliter l'utilisation du programme celui-ci s'exécute via un terminal, p
 
 \subsubsection{Etallonage du cm121 avec le spn1}
 
-Pour effectuer l'étalonnage du cm121, les mesures de référence sont celles du tracker. Nous cherchons à savoir si les mesures du CM121 sont plus proches du spn1 ou du tracker, si les mesures sont plus proche de celle du spn1 alors il semble préférable d'effectuer l'étalonnage avec les mesures du spn1. Le CM121 et le spn1 utilise tous deux un arc pour masquer le rayonnement direct du soleil, cet arc donne un angle de vue de 10.8° pour le cm121 et le spn1, alors que le masque du tracker donne un angle de vue de 5°.\\
+Pour effectuer l'étalonnage du cm121, les mesures de référence sont celles du tracker. Nous cherchons à savoir si les mesures du CM121 sont plus proches du spn1 ou du tracker, si les mesures sont plus proche de celle du spn1 alors il semble préférable d'effectuer l'étalonnage avec les mesures du spn1. Le cm121 et le spn1 utilise tous deux un arc pour masquer le rayonnement direct du soleil, cet arc donne un angle de vue de 10.8° pour le cm121 et le spn1, alors que le masque du tracker donne un angle de vue de 5°.\\
+
+\begin{figure}[H]
+    \begin{minipage}[c]{.2\linewidth}
+        \centering
+        \includegraphics[width=5cm]{image/presentation_cm121/2.jpg}  
+        \caption{cm121}
+    \end{minipage}
+    \hfill%
+    \begin{minipage}[c]{.2\linewidth}
+        \centering
+        \includegraphics[width=5cm]{image/presentation_cm121/3.jpg}  
+        \caption{tracker}
+    \end{minipage}
+    \hfill%
+    \begin{minipage}[c]{.3\linewidth}
+        \centering
+        \includegraphics[width=5cm]{image/presentation_cm121/4.jpg} 
+        \caption{spn1}
+    \end{minipage}
+\end{figure}
+
 L'analyse statistique est éffectuée entre le 01 janvier 2021 jusqu'au 01 avril 2021.
 
 \begin{figure}[H]
@@ -581,7 +668,7 @@ Nous obtenons avec la mise en place de la ventilation un RMSE et un MAE plus él
 
 \subsection{Les apports du stage}
 
-Le stage m'a permis de découvrir un nouveau langage de programmation, ainsi que l'utilisation de github qui permet d'enregistrer les différentes versions de son projet, mais aussi les bonnes pratiques que ce soit pour la programmation ou l'organisation de son répertoire de travail. J'ai également pu apprendre l'utilisation d'un logiciel de modélisation 3D ainsi que le principe de la boussole solaire.
+Le stage m'a permis de découvrir le langage de programmation python, ainsi que l'utilisation de github qui permet d'enregistrer les différentes versions de son projet, mais aussi les bonnes pratiques que ce soit pour la programmation ou l'organisation de son répertoire de travail. J'ai également pu apprendre l'utilisation d'un logiciel de modélisation 3D, fusion 360, ainsi que le principe de la boussole solaire.
 
 
 \section{Conclusion}
