@@ -98,7 +98,8 @@
    \sf Stagiare: &\sf Responsable Pédagogique: &\sf Tutrice de stage : \\
   \sf Alexandre PARASSOURAMIN &\sf Mme Béatrice MOREL &\sf Mme Béatrice MOREL \\
    \sf Master 1 énergie& \sf Maître de conférences H.D.R & \sf Maître de conférences H.D.R\\
-  \sf n$^\circ$~étudiant : 35003702& & \\
+  \sf n$^\circ$~étudiant : 35003702&\sf beatrice.morel@univ-reunion.fr &\sf beatrice.morel@univ-reunion.fr\\
+  \sf alexandreparassouramin@gmail.com & &\\
 \end{tabular}
 
 
@@ -200,7 +201,7 @@ Le CM121 permet de mesurer le rayonnement diffus, le principe consiste à masque
         \includegraphics[width=5cm]{image/presentation_cm121/4.jpg} 
         
     \end{minipage}
-    \caption{CM121, tracker et SPN1 sur la plateforme de la faculté des sciences et technologies, université de la Réunion campus du moufia}
+    \caption{CM121, tracker et SPN1 sur la plateforme de la Faculté des Sciences et Technologies, Université de la Réunion Campus du Moufia}
 \end{figure}
 ~\\
 Le CM121 comportes cinq parties, la base, le pilier, la barre transversale, la barre coulissante et le support pour pyranomètre. Le montage consiste juste à assembler chaque partie à l'aide des boulons fournis.
@@ -385,22 +386,22 @@ Nous trouvons une différence de 1.3°, cela signifie que si la déclinaison sub
 ~\\
 Le programme retourne alors trois calendriers, un calendrier au format CSV, un calendrier au format XLSX et un calendrier ICS. \\
 ~\\
-Le calendrier csv est obtenu par du texte brut ce qui signifie qu'il fonctionne avec tous les logiciels de traitement de texte, mais ce format ne permet pas la mise en forme. \\
+Le calendrier CSV est obtenu par du texte brut ce qui signifie qu'il fonctionne avec tous les logiciels de traitement de texte, mais ce format ne permet pas la mise en forme. \\
 ~\\
-Le calendrier xlsx permet d'intégrer la mise en forme au calendrier, nous obtenons ainsi des codes couleurs, en vert les jours fériés, en bleu les weekends et en rouge les maintenances minimums à effectuer sur le CM121. \\
+Le calendrier XLSX permet d'intégrer la mise en forme au calendrier, nous obtenons ainsi des codes couleurs, en vert les jours fériés, en bleu les week-ends et en rouge les maintenances minimums à effectuer sur le CM121. \\
 ~\\
-Le calendrier ics permet d'avoir les positions du CM121 au format iCalendar ce qui permet entre autres d'avoir le midi-solaire, la position de la barre coulissante et les maintenances minimums via son smartphone par des notifications, cela offre une souplesse d'utilisation comparée aux deux autres calendriers.\\
+Le calendrier ICS permet d'avoir les positions du CM121 au format iCalendar ce qui permet entre autres d'avoir le midi-solaire, la position de la barre coulissante et les maintenances minimums via son smartphone par des notifications, cela offre une souplesse d'utilisation comparée aux deux autres calendriers.\\
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=16cm]{image/calendrier/3.PNG} 
-\caption{Calendrier de réglage du CM121 au format csv}  
+\caption{Calendrier de réglage du CM121 au format CSV}  
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=16cm]{image/calendrier/2.PNG} 
-\caption{Calendrier de réglage du CM121 au format xlsx}  
+\caption{Calendrier de réglage du CM121 au format XLSX}  
 \end{figure}
 
 
@@ -408,26 +409,26 @@ Le calendrier ics permet d'avoir les positions du CM121 au format iCalendar ce q
     \begin{minipage}[c]{.46\linewidth}
         \centering
         \includegraphics[width=5cm]{image/calendrier/4.jpg} 
-		\caption{Calendrier de réglage du CM121 au format ics}
+		\caption{Calendrier de réglage du CM121 au format ICS}
     \end{minipage}
     \hfill%
     \begin{minipage}[c]{.46\linewidth}
         \centering
         \includegraphics[width=5cm]{image/calendrier/7.jpg} 
-        \caption{calendrier de réglage du CM121 au format ics avec notification de réglage minimum}
+        \caption{Calendrier de réglage du CM121 au format ICS avec notification de réglage minimum}
     \end{minipage}
 \end{figure}
 
 \subsubsection{Suppression des données non utilisées, non acquises et aberrantes}
 
 ~\\
-Les fichiers de mesures comportent généralement des données erronées que ce soit pour le CM121, le spn1 ou le tracker. Ces données peuvent bloquer l'exécution de certains programmes, ces données sont repérées sous python car elles ont pour valeur "Nan", "inf" et "-inf". les fichiers de mesures comportent aussi les données pour la nuit qui sont inintéressantes pour l'étude du rayonnement solaire, la création d'une fonction pour supprimer ces mesures fut nécessaire. Elle consiste à repérer ces valeurs et à supprimer les lignes correspondantes.
+Les fichiers de mesures comportent généralement des données erronées que ce soit pour le CM121, le SPN1 ou le tracker. Ces données peuvent bloquer l'exécution de certains programmes, ces données sont repérées sous Python, car elles ont pour valeur "Nan", "inf" et "-inf". Les fichiers de mesures comportent aussi les données pour la nuit qui sont inintéressantes pour l'étude du rayonnement solaire, la création d'une fonction pour supprimer ces mesures fut nécessaire. Elle consiste à repérer ces valeurs et à supprimer les lignes correspondantes.
 
 \subsubsection{Calcul des facteurs de correction}
 
-Les mesures du CM121 doivent être corrigées car l'arc d'ombrage masque une partie du diffus. L'expression permettant de calculer le facteur de correction donné par le fabricant du CM121 se base sur les travaux de Drummond. Cette correction fait l'hypothèse que le ciel est isotropique ce qui donne une correction des mesures purement géométrique.\\
+Les mesures du CM121 doivent être corrigées, car l'arc d'ombrage masque une partie du diffus. L'expression permettant de calculer le facteur de correction donné par le fabricant du CM121 se base sur les travaux de Drummond. Cette correction fait l'hypothèse que le rayonnement diffus est isotrope ce qui donne une correction des mesures purement géométrique.\\
 ~\\
-Les mesures du CM121 sont corrigées par une fonction qui calcule les facteurs de correction en se basant sur l'heure ou les mesures ont été prises et l'applique par la suite aux mesures.
+Les mesures du CM121 sont corrigées par une fonction qui calcule les facteurs de correction en se basant sur l'heure ou les mesures ont été prises, ils sont appliqués par la suite aux mesures.
 
 \subsubsection{Analyse statistique et étalonnage}
 
@@ -439,7 +440,7 @@ Le capteur du pyranomètre possède une sensitivité qui change à travers le te
 \caption{Sensitivité du pyranomètre}  
 \end{figure}
 ~\\
-La nouvelle sensibilité peut être déterminé en comparant nos mesures avec les mesures d'un pyranomètre de référence, elle est obtenue par la relation:
+La nouvelle sensibilité peut être déterminée en comparant nos mesures avec les mesures d'un pyranomètre de référence, elle est obtenue par la relation :
 
 \begin{flalign}
 &DHI_{mesure}=a.DHI_{r\acute{e}f\acute{e}rence} &&\\
@@ -449,7 +450,7 @@ La nouvelle sensibilité peut être déterminé en comparant nos mesures avec le
 ~\\
 Pour obtenir la nouvelle sensibilité de notre pyranomètre nous devons alors calculer le coefficient 'a', pour obtenir ce coefficient nous réalisons une régression linéaire. Nous obtenons alors une droite d'équation $y = ax + b$ ou 'b' est négligé.\\
 ~\\
-La fonction développée permet d'effectuer l'étalonnage mais aussi l'analyse statistique. L'analyse statistique permet d'obtenir sur le graphique le coefficient de détermination $R^2$, la variance, l'erreur quadratique moyenne et l'erreur absolue moyenne.\\
+La fonction développée permet d'effectuer l'étalonnage, mais aussi l'analyse statistique. L'analyse statistique permet d'obtenir sur le graphique le coefficient de détermination $R^2$, la variance, l'erreur quadratique moyenne et l'erreur absolue moyenne.\\
 ~\\
 Le coefficient de détermination ($R^2$) est un indicateur qui permet de juger la qualité d’une régression linéaire. Si le $R^2$ vaut 1, cela signifie que l’équation de la droite de régression est capable de déterminer 100 \% de la distribution des points. Cela signifie alors que le modèle mathématique utilisé, ainsi que les paramètres "a" et "b" calculés sont ceux qui déterminent la distribution des points.\\
 ~~\\
@@ -458,11 +459,11 @@ La variance ($\sigma ^2$) permet de mesurer la dispersion des valeurs d'un écha
 \begin{flalign}
 &\sigma ^2 =  \frac{\sum(X+\overline{X})^2}{n}&&\\
 & \overline{X} : moyenne&&\\
-& X : valeur incluse dans l'ensemble de données&&
+& X : valeur incluse dans l'ensemble des données&&
 \end{flalign}
 
 ~~\\
-L'erreur quadratique moyenne (RMSE) fournit une indication par rapport à la dispersion ou la variabilité de la qualité de la prédiction, il est souvent relié à la variance car les valeurs de RMSE sont difficiles à interpréter parce que l’on n'est pas en mesure de dire si on a une variance faible ou forte, l'erreur quadratique moyenne donne plus de poids aux erreurs élevés. On définit l'erreur quadratique moyenne comme suit :
+L'erreur quadratique moyenne (RMSE) fournit une indication par rapport à la dispersion ou la variabilité de la qualité de la prédiction, il est souvent relié à la variance, car les valeurs de RMSE sont difficiles à interpréter parce que l’on n'est pas en mesure de dire si on a une variance faible ou forte, l'erreur quadratique moyenne donne plus de poids aux erreurs élevés. On définit l'erreur quadratique moyenne comme par :
 
 \begin{flalign}
 &RMSE = \sqrt{\frac{1}{N}  \overset{N}{\underset{i=1}{\sum}} (\widehat{y}_i -y_i)^2 }&&
@@ -497,24 +498,24 @@ L'erreur relative $\delta \alpha_r$ est obtenue par :
 &\delta \alpha_r = \frac{valeur~mesur\acute{e}e-valeur~r\acute{e}f\acute{e}rence}{|valeur~r\acute{e}f\acute{e}rence|} &&
 \end{flalign}
 ~\\
-Il est intéressant d'avoir la représentation de l'erreur relative en fonction de l'azimut et de l'élévation du soleil, cela permet de mettre en lumière des journées particulières comme par exemple le dysfonctionnement de l'acquisition des mesures, mais aussi la présence de masques ou de reflet impactant le pyranomètre. Les erreurs aberrantes qui sont identifiées grace à cette méthode peuvent donc être supprimées.\\
+Il est intéressant d'avoir la représentation de l'erreur relative en fonction de l'azimut et de l'élévation du soleil, cela permet de mettre en lumière des journées particulières comme par exemple le dysfonctionnement de l'acquisition des mesures, mais aussi la présence de masques ou de reflet impactant le pyranomètre. Les erreurs aberrantes qui sont identifiées grâce à cette méthode peuvent donc être supprimées.\\
 ~\\
 La fonction développée renvoie le graphique ci-dessous, nous constatons des erreurs relatives élevées pour le lever et le coucher du soleil, mais aussi durant certaines journées.
  
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{image/erreur_relative/1.png} 
-\caption{Representation de l'erreur relative du CM121 en fonction du tracker pour mars 2021}  
+\caption{Représentation de l'erreur relative du CM121 en fonction du tracker pour mars 2021}  
 \end{figure}
 
 \subsubsection{Histogramme}
 
-La dernière fonction pour l'analyse statistique est l'histogramme, il donne la représentation graphique de la répartition d'une variable, dans notre cas la fonction donne la répartition du rayonnement diffus et de l'erreur relative. C'est une information supplémentaire, elle nous permet de savoir si le ciel pour la période souhaitée était plutôt dégagé ou nuageux, mais aussi si l'acquisition des mesures était bonne, dans ce cas la répartition des erreurs relative est majoritairement centrée sur le zéro.\\
+La dernière fonction pour l'analyse statistique est l'histogramme, il donne la représentation graphique de la répartition d'une variable, dans notre cas la fonction donne la répartition du rayonnement diffus et de l'erreur relative. C'est une information supplémentaire, elle nous permet de savoir si le ciel pour la période souhaitée était plutôt dégagé ou nuageux, mais aussi, si l'acquisition des mesures était bonne, dans ce cas la répartition des erreurs relative serait majoritairement centrée sur le zéro.\\
 Elle renvoie les graphiques ci-dessous.
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{image/histogramme/1.png} 
-\caption{Répartion du rayonnement diffus du CM121 pour mars 2021}  
+\caption{Répartition du rayonnement diffus du CM121 pour mars 2021}  
 \end{figure}
 
 \begin{figure}[H]
@@ -526,38 +527,39 @@ Elle renvoie les graphiques ci-dessous.
 
 \subsubsection{Sélection des mesures entre deux intervalles}
 
-Deux fonctions ont été créer pour sélectionner les mesures entre une période donnée, la première permet d'avoir les mesures entre deux dates et la dernière permet d'avoir les mesures pour une tranche horaire spécifiée. Après la sélection de la période souhaitée, l'opérateur lance l'analyse statistique.
+Deux fonctions ont été créées permettant de sélectionner les mesures pour une période donnée, la première permet d'avoir les mesures entre deux dates et la dernière permet d'avoir les mesures pour une tranche horaire spécifiée. Après la sélection de la période souhaitée, l'opérateur lance l'analyse statistique.
 
 \subsubsection{Exécution de l'analyse statistique}
 
-Pour faciliter l'utilisation du programme celui-ci s'exécute via un terminal, pour ce faire l'utilisateur doit juste renseigner le nom de son fichier de mesure, choisir les valeurs pour la mesure, la référence et lancer l'analyse. Si l'utilisateur le souhaite il est aussi en mesure de renseigner la période sur laquelle il souhaite l'analyse statistique que ce soit entre deux dates, une tranche horaire ou entre deux dates pour une tranche horaire.
+Pour faciliter l'utilisation du programme celui-ci s'exécute via un terminal, pour ce faire l'utilisateur doit juste renseigner le nom de son fichier de mesure, choisir les valeurs pour la mesure, la référence et lancer l'analyse. Si l'utilisateur le souhaite, il est aussi en mesure de renseigner la période sur laquelle il souhaite l'analyse statistique que ce soit entre deux dates, une tranche horaire ou entre deux dates pour une tranche horaire.
 
 
 \subsubsection{Comparaison du CM121 avec le SPN1 et le tracker}
 
-Le CM121 et le SPN1 utilise tous deux un arc pour masquer le rayonnement direct du soleil, cet arc donne un angle de vue de 10.8° pour le CM121 et le SPN1, alors que le masque du tracker une sphére qui donne un angle de vue de 5°. Nous cherchons donc à determiner si les mesures du CM121 sont plus proche du SPN1 que du tracker de part sa conception.
+Le CM121 et le SPN1 utilise tous deux un arc pour masquer le rayonnement direct du soleil, cet arc donne un angle de vue de 10.8° pour le CM121 et le SPN1, alors que le masque du tracker une sphère qui donne un angle de vue de 5°. Nous cherchons donc à déterminer si les mesures du CM121 sont plus proches du SPN1 que du tracker de part sa conception.
 
 \begin{figure}[H]
     \begin{minipage}[c]{.2\linewidth}
         \centering
         \includegraphics[width=5cm]{image/presentation_cm121/2.jpg}  
-        \caption{CM121}
+
     \end{minipage}
     \hfill%
     \begin{minipage}[c]{.2\linewidth}
         \centering
         \includegraphics[width=5cm]{image/presentation_cm121/3.jpg}  
-        \caption{tracker}
+
     \end{minipage}
     \hfill%
     \begin{minipage}[c]{.3\linewidth}
         \centering
         \includegraphics[width=5cm]{image/presentation_cm121/4.jpg} 
-        \caption{SPN1}
+
     \end{minipage}
+    \caption{CM121, tracker et SPN1 sur la plateforme de la Faculté des Sciences et Technologies, Université de la Réunion Campus du Moufia}
 \end{figure}
 ~\\
-L'analyse statistique est effectuée entre le 01 janvier 2021 jusqu'au 01 avril 2021, elle est réaliser une première fois globalement, puis pour les données entre 5h et 12h et enfin entre 12h et 19h. Les graphiques obtenu sont disponibles en Annexe.
+L'analyse statistique est effectuée entre le 01 janvier 2021 jusqu'au 01 avril 2021, elle est réalisée une première fois globalement, puis pour les données entre 5h et 12h et enfin entre 12h et 19h. Les graphiques obtenus sont disponibles en annexe (annexe 1 à 3).
 ~\\
 
 
@@ -587,16 +589,16 @@ L'analyse statistique est effectuée entre le 01 janvier 2021 jusqu'au 01 avril 
  CM121 vs SPN1 & 0.97 & 25810.8 & 13.5 & 8 \\
  \hline
 \end{tabular}
-\caption{Indicateur statistique CM121 vs tracker et CM121 vs spn1}
+\caption{Indicateur statistique CM121 vs tracker et CM121 vs SPN1}
 \end{center}
 \end{table}
 
 ~\\
-De manière globale, que ce soit le matin ou l'après-midi, on constate que les variances sont très proches, qui plus en comparant le CM121 avec le SPN1 les erreurs quadratique moyennes et les erreurs absolues moyennes sont plus faibles et les coefficients de détermination sont plus élevés. Les mesures du CM121 sont donc plus proches des mesures du spn1 que ceux du tracker.  \\
+De manière globale, que ce soit le matin ou l'après-midi, on constate que les variances sont très proches, qui plus en comparant le CM121 avec le SPN1 les erreurs quadratiques moyennes et les erreurs absolues moyennes sont plus faibles et les coefficients de détermination sont plus élevés. Les mesures du CM121 sont donc plus proches des mesures du SPN1 que ceux du tracker, de part sa conception. \\
 
 
 
-\subsubsection{Impact de la  ventilation sur les mesures du CM121}
+\subsubsection{Impact de la ventilation sur les mesures du CM121}
 
 Les mesures avec la ventilation opérationnelle ont été acquise entre le 21 avril 2021 et le 31 mai 2021, nous devons donc comparer les mesures avec ventilation et sans ventilation sur une même période de 41 jours, les mesures entre le 21 avril 2021 et le 31 mai 2021 (avec ventilation) sont comparées aux mesures entre le 11 mars et le 20 avril (sans ventilation).
 
@@ -640,60 +642,60 @@ Les mesures avec la ventilation opérationnelle ont été acquise entre le 21 av
  Sans ventilation & 0.95 & 22587.1 & 16.3 & 9.2 \\ 
  \hline
 \end{tabular}
-\caption{Indicateur statistique pour l'impact de la ventilation sur les mesures du CM121}
+\caption{Indicateurs statistiques pour l'impact de la ventilation sur les mesures du CM121}
 \end{center}
 \end{table}
 
-
-Les histogrammes nous montrent que pour les deux périodes la répartition du DHI est similaire.
-Nous obtenons avec la mise en place de la ventilation un RMSE et un MAE plus élevé, en revanche la variance est plus faible, les mesures ont donc moins de dispersion avec la ventilation. Pour obtenir des résultats plus concrets il faudrait réaliser la même étude sur une période plus longue.
+~\\
+Les histogrammes nous montrent que pour les deux périodes la répartition du rayonnement diffus est similaire.
+Nous obtenons avec la mise en place de la ventilation une erreur quadratique moyenne et une erreur absolue moyenne plus élevé, en revanche la variance est plus faible, les mesures ont donc moins de dispersion avec la ventilation. Dire que la ventilation augmente l'erreur quadratique moyenne et l'erreur absolue moyenne semble fausse, pour obtenir des résultats plus concrets, il faudrait réaliser la même étude sur une période plus longue. Les résultats peuvent venir du fait que la période d'acquisition était particulière.
 
 \subsection{Les apports du stage}
 
-Le stage m'a permis de découvrir le langage de programmation python, ainsi que l'utilisation de github qui permet d'enregistrer les différentes versions de son projet, mais aussi les bonnes pratiques que ce soit pour la programmation ou l'organisation de son répertoire de travail. J'ai également pu apprendre l'utilisation d'un logiciel de modélisation 3D, fusion 360, ainsi que le principe de la boussole solaire.
+Le stage m'a permis de découvrir le langage de programmation Python, ainsi que l'utilisation de github qui permet d'enregistrer les différentes versions de son projet, mais aussi les bonnes pratiques que ce soit pour la programmation ou l'organisation de son répertoire de travail. J'ai également pu apprendre l'utilisation d'un logiciel de modélisation 3D, fusion 360, ainsi que le principe de la boussole solaire. Il m'a aussi permis de mettre en place les outils nécessaires et leur choix dans le cas de l'analyse statistique.
 
 
 \section{Conclusion}
 
-Les missions demandées lors du stage firent mener à bien, que ce soit le calendrier de réglage du CM121, la mise en place d'un dispositif permettant un réglage précis et simple de la position nord-sud, ou encore le développement de programme sous python permettant l'analyse statistique d'un jeu de données.\\
+Les missions demandées lors du stage firent mener à bien, que ce soit le calendrier de réglage du CM121, la mise en place d'un dispositif permettant un réglage précis et simple de la position nord-sud, ou encore le développement de programme sous Python permettant l'analyse statistique d'un jeu de données.\\
 ~\\
-Le stage a permis de mettre en lumière que les mesures du CM121 sont plus proches du spn1 que du tracker, l'étude statistique a montré une variance similaire dans le cas ou le CM121 est comparé au tracker et dans le cas ou le CM121 est comparé au SPN1, ce qui signifie que dans les deux cas la dispersion des mesures est la même. La comparaison avec le spn1 donne les erreurs quadratique  moyennes et les erreurs absolues moyennes les plus faible, ce qui montre que les mesures ont   moins d'erreurs élevées et systématiques, les mesures du CM121 sont donc plus proche du SPN1 que du tracker.\\
+Le stage a permis de mettre en lumière que les mesures du CM121 sont plus proches du SPN1 que du tracker, l'étude statistique a montré une variance similaire dans le cas où le CM121 est comparé au tracker et dans le cas où le CM121 est comparé au SPN1, ce qui signifie que dans les deux cas la dispersion des mesures est la même. La comparaison avec le SPN1 donne les erreurs quadratiques moyennes et les erreurs absolues moyennes les plus faibles, ce qui montre que les mesures ont moins d'erreurs élevées et systématiques, les mesures du CM121 sont donc plus proche du SPN1 que du tracker.\\
 ~\\
-Le stage a aussi montré que la ventilation permet d'avoir moins de dispersion, mais paradoxalement elle donne une erreur quadratique moyenne et une erreur absolue moyenne plus élevé, divers facteurs peuvent expliquer cela comme notamment une période d'acquisition trop courte, pour valider ce résultat il semble judicieux de refaire cette analyse statistique dans le futur avec une période d'acquisition plus longue.
+Le stage a aussi montré que la ventilation permet d'avoir moins de dispersion, mais paradoxalement, elle donne une erreur quadratique moyenne et une erreur absolue moyenne plus élevé, divers facteurs peuvent expliquer cela comme notamment une période d'acquisition trop courte, pour valider ce résultat, il semble judicieux de refaire cette analyse statistique dans le futur avec une période d'acquisition plus longue.
 
 \newpage
 
 \section{Bibliographie}
 
 
-$[1]$ The assessment of four different correction models applied to the diffuse radiation measured with a shadow ring using global and normal beam radiation measurements for Beer Sheva, Israel. (2008). Solar Energy, [online] 82(2), pp.144–156. Available at: https://www.sciencedirect.com/science/article/abs/pii/S0038092X07001338 [Accessed 5 Jun. 2021].\\
+$[1]$ The assessment of four different correction models applied to the diffuse radiation measured with a shadow ring using global and normal beam radiation measurements for Beer Sheva, Israel. (2008). Solar Energy, [online] 82(2), pp.144–156. Available at: \url{https://www.sciencedirect.com/science/article/abs/pii/S0038092X07001338} [Accessed 5 Jun. 2021].\\
 ~\\
 ‌
 $[2]$ Sánchez, G., Serrano, A. and Cancillo, M.L. (2013). Shadow-band correction for diffuse ultraviolet radiation measurements. Journal of Geophysical Research: Atmospheres, 118(9), pp.3807–3816.\\
 
 ‌~\\
 $[3]$ Shadow-band radiometer measurement of diffuse solar irradiance: Calculation of geometrical and total correction factors. (2016). Solar Energy, [online] 139, pp.85–99.\\ 
-Available at: https://www.sciencedirect.com/science/article/abs/pii/S0038092X16304327\#:~:text=Taking\\\%20into\%20account\%20that\%20a [Accessed 5 Jun. 2021].\\
+Available at: \url{https://www.sciencedirect.com/science/article/abs/pii/S0038092X16304327#:~:text=Taking\%20into\%20account\%20that\%20a} [Accessed 5 Jun. 2021].\\
 
 ‌~\\
-$[4]$ On shadowband correction methods for diffuse irradiance measurements. (1995). Solar Energy, [online] 54(2), pp.105–114. Available at: https://www.sciencedirect.com/science\\/article/abs/pii/0038092X9400115T [Accessed 5 Jun. 2021].\\
+$[4]$ On shadowband correction methods for diffuse irradiance measurements. (1995). Solar Energy, [online] 54(2), pp.105–114. Available at: \url{https://www.sciencedirect.com/science/article/abs/pii/0038092X9400115T} [Accessed 5 Jun. 2021].\\
 
 ‌~\\
-$[5]$ A shadow-ring device for measuring diffuse solar radiation on a vertical surface in a tropical zone. (2016). Solar Energy, [online] 136, pp.629–638. Available at: https://www.sciencedirect.com/science/article/abs/pii/S0038092X16303012$\sharp$:~:text=A\%20shadow\\\%2Dring\%20device\%20is [Accessed 5 Jun. 2021].\\
+$[5]$ A shadow-ring device for measuring diffuse solar radiation on a vertical surface in a tropical zone. (2016). Solar Energy, [online] 136, pp.629–638. Available at: \url{https://www.sciencedirect.com/science/article/abs/pii/S0038092X16303012#:~:text=A\%20shadow\%2Dring\%20device\%20is} [Accessed 5 Jun. 2021].\\
 ‌~\\
 $[6]$ \url{https://github.com/LE2P/pyranometre\_arc\_ombrage} \\
 ~\\
 $[7]$ \url{https://rratlas.energy.gov.sa/RRMMPublicPortal/sites/default/files/How\%20to\%20Read\%20Live\%20Graph.htm} \\
 ~\\
-$[8]$JJ (2016). MAE and RMSE — Which Metric is Better? [online] Medium. Available at: https://medium.com/human-in-a-machine-world/mae-and-rmse-which-metric-is-better-e60ac3bde13d.
+$[8]$JJ (2016). MAE and RMSE — Which Metric is Better? [online] Medium. Available at: \href{https://medium.com/human-in-a-machine-world/mae-and-rmse-which-metric-is-better-e60ac3bde13d}{https://medium.com/human-in-a-machine-world/mae-and-rmse-which-metric-is-better-e60ac3bde13d}\\
 ~\\
-$[9]$ May, P.T., Cummings, F., Koutsovasilis, J., Jones, R. and Shaw, D. (2002). The Australian Bureau of Meteorology 1280-MHz Wind Profiler. Journal of Atmospheric and Oceanic Technology, [online] 19(6), pp.911–923. Available at: \url{https://journals.ametsoc.org/view/journals/atot/19/6/1520-0426_2002_019_0911_tabomm_2_0_co_2.xml}.
+$[9]$ May, P.T., Cummings, F., Koutsovasilis, J., Jones, R. and Shaw, D. (2002). The Australian Bureau of Meteorology 1280-MHz Wind Profiler. Journal of Atmospheric and Oceanic Technology, [online] 19(6), pp.911–923. Available at: \url{https://journals.ametsoc.org/view/journals/atot/19/6/1520-0426_2002_019_0911_tabomm_2_0_co_2.xml}
 
 \newpage
 
 ‌\section{Annexes}
-\subsection{Annexe 1}
-Analyse statistique entre le 01 janvier 2021 jusqu'au 01 avril 2021.
+\subsection*{Annexe 1}
+Analyse statistique pour le 01 janvier 2021 jusqu'au 01 avril 2021.
 
 \begin{figure}[H]
 \centering
@@ -707,8 +709,10 @@ Analyse statistique entre le 01 janvier 2021 jusqu'au 01 avril 2021.
 \caption{cm121 en fonction du spn1} 
 \end{figure}
 
+\newpage
 
-Analyse statistique entre le 01 janvier 2021 jusqu'au 01 avril 2021 de 5h à 12h.
+\subsection*{Annexe 2}
+Analyse statistique pour le 01 janvier 2021 jusqu'au 01 avril 2021 de 5h à 12h.
 
 \begin{figure}[H]
 \centering
@@ -722,9 +726,9 @@ Analyse statistique entre le 01 janvier 2021 jusqu'au 01 avril 2021 de 5h à 12h
 \caption{cm121 en fonction du spn1}  
 \end{figure}
 
-
-
-Analyse statistique entre le 01 janvier 2021 jusqu'au 01 avril 2021 de 12h à 19h.
+\newpage
+\subsection*{Annexe 3}
+Analyse statistique pour le 01 janvier 2021 jusqu'au 01 avril 2021 de 12h à 19h.
 
 
 \begin{figure}[H]
